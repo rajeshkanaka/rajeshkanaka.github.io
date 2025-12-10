@@ -3,1085 +3,671 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rajesh Pandhare | AI & ML Expert | Tech Lead</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            color: #333;
-            background-color: #f8f9fa;
-        }
-        .bg-tech-pattern {
-            background-image: 
-                radial-gradient(circle at 25px 25px, rgba(100, 149, 237, 0.15) 2%, transparent 0%), 
-                radial-gradient(circle at 75px 75px, rgba(100, 149, 237, 0.15) 2%, transparent 0%);
-            background-size: 100px 100px;
-        }
-        .nav-link {
-            position: relative;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: #4169E1;
-            transition: width 0.3s;
-        }
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        .section-heading {
-            position: relative;
-            padding-bottom: 15px;
-        }
-        .section-heading::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background-color: #4169E1;
-        }
-        .experience-card {
-            position: relative;
-            border-left: 2px solid #4169E1;
-            padding-left: 20px;
-            margin-bottom: 50px; /* Increased space between cards */
-            padding-bottom: 10px; /* Added padding at bottom */
-        }
-        .experience-card::before {
-            content: '';
-            position: absolute;
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            background-color: #4169E1;
-            left: -8.5px;
-            top: 5px;
-        }
-        .experience-date {
-            position: absolute;
-            left: -120px; /* Moved further left to avoid overlap */
-            top: 0;
-            width: 100px; /* Fixed width for date container */
-            text-align: right;
-            font-size: 0.875rem;
-            color: #6b7280;
-        }
-        .skill-bar {
-            height: 8px;
-            border-radius: 4px;
-            background-color: #e9ecef;
-            margin-bottom: 25px;
-        }
-        .skill-progress {
-            height: 100%;
-            border-radius: 4px;
-            background-color: #4169E1;
-            position: relative;
-        }
-        .project-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        .wave-animation {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg"><path fill="%234169E1" fill-opacity="0.2" d="M0,192L48,170.7C96,149,192,107,288,106.7C384,107,480,149,576,154.7C672,160,768,128,864,122.7C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
-            background-size: cover;
-            background-repeat: no-repeat;
-            z-index: -1;
-        }
-        .publication-card {
-            transition: transform 0.3s ease;
-        }
-        .publication-card:hover {
-            transform: translateX(5px);
-        }
-        .tech-badge {
-            display: inline-block;
-            background-color: rgba(65, 105, 225, 0.1);
-            color: #4169E1;
-            border-radius: 4px;
-            padding: 4px 10px;
-            margin: 3px;
-            font-size: 0.8rem;
-            transition: all 0.3s ease;
-        }
-        .tech-badge:hover {
-            background-color: #4169E1;
-            color: white;
-        }
-        .ai-gradient-text {
-            background: linear-gradient(90deg, #4169E1, #6495ED);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            color: transparent;
-        }
-    </style>
+    <title>Basics of AI</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-white shadow-md z-50 py-4">
-        <div class="container mx-auto px-6 flex items-center justify-between">
-            <div class="text-2xl font-bold text-gray-800">
-                Rajesh<span class="text-blue-600">Pandhare</span>
-                <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+    <div class="app-container">
+        <!-- Navigation Sidebar -->
+        <nav class="sidebar">
+            <div class="nav-header">
+                <h2>Basics of AI</h2>
             </div>
-            <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="rajeshpandhare" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/rajeshpandhare?trk=profile-badge">Rajesh Pandhare</a></div>
-            <div class="hidden md:flex space-x-10">
-                <a href="#home" class="nav-link text-gray-700 hover:text-blue-600 transition">Home</a>
-                <a href="#about" class="nav-link text-gray-700 hover:text-blue-600 transition">About</a>
-                <a href="#experience" class="nav-link text-gray-700 hover:text-blue-600 transition">Experience</a>
-                <a href="#skills" class="nav-link text-gray-700 hover:text-blue-600 transition">Skills</a>
-                <a href="#projects" class="nav-link text-gray-700 hover:text-blue-600 transition">Projects</a>
-                <a href="#publications" class="nav-link text-gray-700 hover:text-blue-600 transition">Publications</a>
-                <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600 transition">Contact</a>
-            </div>
-            <div class="md:hidden flex items-center">
-                <button class="outline-none mobile-menu-button">
-                    <svg class="w-6 h-6 text-gray-700 hover:text-blue-600" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                        <path d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </nav>
+            <ul class="nav-menu">
+                <li class="nav-item active" data-tab="home">
+                    <span class="nav-icon">🏠</span>
+                    <span>Home</span>
+                </li>
+                <li class="nav-item" data-tab="basics">
+                    <span class="nav-icon">📚</span>
+                    <span>Basics</span>
+                </li>
+                <li class="nav-item" data-tab="internals">
+                    <span class="nav-icon">⚙️</span>
+                    <span>Internals</span>
+                </li>
+                <li class="nav-item" data-tab="output">
+                    <span class="nav-icon">💡</span>
+                    <span>Output</span>
+                </li>
+                <li class="nav-item" data-tab="applications">
+                    <span class="nav-icon">🔬</span>
+                    <span>Applications</span>
+                </li>
+                <li class="nav-item" data-tab="chatbot">
+                    <span class="nav-icon">🤖</span>
+                    <span>Chatbot</span>
+                </li>
+            </ul>
+        </nav>
 
-    <!-- Mobile menu -->
-    <div class="hidden mobile-menu fixed top-16 left-0 w-full bg-white z-50 shadow-md">
-        <ul class="py-2 px-6">
-            <li><a href="#home" class="block py-2 text-gray-700 hover:text-blue-600">Home</a></li>
-            <li><a href="#about" class="block py-2 text-gray-700 hover:text-blue-600">About</a></li>
-            <li><a href="#experience" class="block py-2 text-gray-700 hover:text-blue-600">Experience</a></li>
-            <li><a href="#skills" class="block py-2 text-gray-700 hover:text-blue-600">Skills</a></li>
-            <li><a href="#projects" class="block py-2 text-gray-700 hover:text-blue-600">Projects</a></li>
-            <li><a href="#publications" class="block py-2 text-gray-700 hover:text-blue-600">Publications</a></li>
-            <li><a href="#contact" class="block py-2 text-gray-700 hover:text-blue-600">Contact</a></li>
-        </ul>
+        <!-- Main Content Area -->
+        <main class="content">
+            <!-- HOME TAB -->
+            <section id="home" class="tab-content active">
+                <div class="home-hero">
+                    <h1 class="main-title">Basics of AI</h1>
+                    <p class="author-line">Author: Rajesh Pandhare, Kanaka Software</p>
+                    <div class="welcome-box">
+                        <h2>Welcome! 👋</h2>
+                        <p>This app will teach you the basic ideas of <strong>Artificial Intelligence (AI)</strong> in very simple language.</p>
+                        <p>You do <strong>not</strong> need any coding skills or AI background to use this app.</p>
+                        <p>Just click on the tabs on the left to start learning!</p>
+                    </div>
+                    <div class="quick-start">
+                        <h3>Where to Start?</h3>
+                        <div class="start-cards">
+                            <div class="start-card" onclick="navigateToTab('basics')">
+                                <span class="card-icon">📚</span>
+                                <h4>Basics</h4>
+                                <p>Learn what AI, ML, and other terms mean</p>
+                            </div>
+                            <div class="start-card" onclick="navigateToTab('internals')">
+                                <span class="card-icon">⚙️</span>
+                                <h4>Internals</h4>
+                                <p>See how AI learns from data</p>
+                            </div>
+                            <div class="start-card" onclick="navigateToTab('applications')">
+                                <span class="card-icon">🔬</span>
+                                <h4>Applications</h4>
+                                <p>Discover AI uses in Physics, Math, Biology</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BASICS TAB -->
+            <section id="basics" class="tab-content">
+                <h1>Understanding AI Basics</h1>
+                <p class="section-intro">Let's learn some important terms. Don't worry - we'll explain everything in simple words!</p>
+
+                <!-- AI Concept Flow Diagram -->
+                <div class="diagram-container">
+                    <h3>How AI Works (Simple View)</h3>
+                    <div class="flow-diagram">
+                        <div class="flow-box input-box">
+                            <span class="flow-icon">📊</span>
+                            <p><strong>Data</strong></p>
+                            <p class="small-text">Text, images, numbers</p>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-box process-box">
+                            <span class="flow-icon">🧠</span>
+                            <p><strong>AI Model</strong></p>
+                            <p class="small-text">Finds patterns</p>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-box output-box">
+                            <span class="flow-icon">✨</span>
+                            <p><strong>Useful Output</strong></p>
+                            <p class="small-text">Answers, predictions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Concept Cards -->
+                <div class="concept-grid">
+                    <!-- AI -->
+                    <div class="concept-card">
+                        <div class="concept-header">
+                            <span class="concept-icon">🤖</span>
+                            <h2>What is AI (Artificial Intelligence)?</h2>
+                        </div>
+                        <div class="concept-body">
+                            <p><strong>Simple Definition:</strong></p>
+                            <p>AI means making computers do tasks that normally need human thinking. The computer can learn from examples and make decisions on its own.</p>
+
+                            <div class="examples-box">
+                                <h4>Real-Life Examples:</h4>
+                                <ul>
+                                    <li>📱 When your phone recognizes your face to unlock - that's AI!</li>
+                                    <li>🎵 When Spotify suggests songs you might like - that's AI!</li>
+                                    <li>📧 When Gmail filters spam emails automatically - that's AI!</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ML -->
+                    <div class="concept-card">
+                        <div class="concept-header">
+                            <span class="concept-icon">📈</span>
+                            <h2>What is Machine Learning (ML)?</h2>
+                        </div>
+                        <div class="concept-body">
+                            <p><strong>Simple Definition:</strong></p>
+                            <p>Machine Learning is a type of AI where computers learn from examples instead of being given exact rules. It's like teaching a child by showing many pictures, not by giving a rulebook.</p>
+
+                            <div class="examples-box">
+                                <h4>Real-Life Examples:</h4>
+                                <ul>
+                                    <li>📸 Photo apps that group pictures of the same person together</li>
+                                    <li>🛒 Online shops that show "You might also like..." products</li>
+                                    <li>📝 Your phone keyboard predicting the next word as you type</li>
+                                </ul>
+                            </div>
+
+                            <div class="did-you-know">
+                                <strong>💡 Did you know?</strong>
+                                <p>Machine Learning is like how you learned to recognize fruits. Nobody gave you rules like "if it's red and round, it's an apple." You just saw many apples and learned!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GenAI -->
+                    <div class="concept-card">
+                        <div class="concept-header">
+                            <span class="concept-icon">✨</span>
+                            <h2>What is Generative AI (GenAI)?</h2>
+                        </div>
+                        <div class="concept-body">
+                            <p><strong>Simple Definition:</strong></p>
+                            <p>Generative AI is AI that can <em>create new things</em> - like writing text, making images, or composing music. It doesn't just recognize or classify; it generates something new!</p>
+
+                            <div class="examples-box">
+                                <h4>Real-Life Examples:</h4>
+                                <ul>
+                                    <li>💬 ChatGPT writing answers to your questions</li>
+                                    <li>🎨 DALL-E or Midjourney creating pictures from your descriptions</li>
+                                    <li>📝 AI helping you write essays or summarize long articles</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI Agents -->
+                    <div class="concept-card">
+                        <div class="concept-header">
+                            <span class="concept-icon">🦾</span>
+                            <h2>What are AI Agents?</h2>
+                        </div>
+                        <div class="concept-body">
+                            <p><strong>Simple Definition:</strong></p>
+                            <p>AI Agents are AI systems that can take actions on their own to complete tasks. They can plan steps, use tools, and work towards a goal - like a helpful assistant that can actually do things for you.</p>
+
+                            <div class="examples-box">
+                                <h4>Real-Life Examples:</h4>
+                                <ul>
+                                    <li>📅 An AI that can book appointments for you by checking your calendar and sending emails</li>
+                                    <li>🔍 An AI assistant that can search the internet, read articles, and give you a summary</li>
+                                    <li>🛒 A shopping assistant that compares prices across websites and finds the best deal</li>
+                                </ul>
+                            </div>
+
+                            <div class="did-you-know">
+                                <strong>💡 Did you know?</strong>
+                                <p>Think of AI Agents like a very smart helper. Instead of just answering questions, they can actually do tasks step by step!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RAG -->
+                    <div class="concept-card">
+                        <div class="concept-header">
+                            <span class="concept-icon">📚</span>
+                            <h2>What is RAG (Retrieval-Augmented Generation)?</h2>
+                        </div>
+                        <div class="concept-body">
+                            <p><strong>Simple Definition:</strong></p>
+                            <p>RAG is a method where AI first <em>searches for relevant information</em> (like looking in a library) and then uses that information to give you a better answer. It combines searching with generating.</p>
+
+                            <div class="examples-box">
+                                <h4>Real-Life Example:</h4>
+                                <ul>
+                                    <li>Imagine asking a question about your college syllabus. RAG would:
+                                        <ol>
+                                            <li>First, search your syllabus documents</li>
+                                            <li>Find the relevant parts</li>
+                                            <li>Then write an answer using that information</li>
+                                        </ol>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="tooltip-box">
+                                <strong>🔤 Breaking down the name:</strong>
+                                <p><strong>Retrieval</strong> = Finding/fetching information</p>
+                                <p><strong>Augmented</strong> = Made better/enhanced</p>
+                                <p><strong>Generation</strong> = Creating the answer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- INTERNALS TAB -->
+            <section id="internals" class="tab-content">
+                <h1>How AI Learns (Training)</h1>
+                <p class="section-intro">Let's see what happens inside an AI when it learns. We'll use a simple step-by-step visual!</p>
+
+                <div class="training-explanation">
+                    <h3>Understanding Training in Simple Words</h3>
+                    <div class="explanation-points">
+                        <div class="point">
+                            <span class="point-number">1</span>
+                            <p><strong>AI sees lots of examples</strong> - like thousands of sentences, pictures, or numbers.</p>
+                        </div>
+                        <div class="point">
+                            <span class="point-number">2</span>
+                            <p><strong>AI finds patterns</strong> - it notices what things have in common.</p>
+                        </div>
+                        <div class="point">
+                            <span class="point-number">3</span>
+                            <p><strong>AI stores these patterns as numbers</strong> - not as full sentences or pictures, but as mathematical patterns inside the model.</p>
+                        </div>
+                    </div>
+
+                    <div class="did-you-know">
+                        <strong>💡 Important to understand:</strong>
+                        <p>The AI doesn't store text like a notebook. It learns <em>patterns</em> and stores them as numbers. It's like how you don't memorize every cat you've seen, but you learned the <em>pattern</em> of what makes something a cat!</p>
+                    </div>
+                </div>
+
+                <!-- Interactive Training Simulation -->
+                <div class="simulation-container">
+                    <h3>Interactive Training Simulation</h3>
+                    <p>Click "Start Training" to see how AI learns step by step!</p>
+
+                    <div class="simulation-area">
+                        <div class="sim-step" id="sim-step-1">
+                            <h4>Step 1: Input Data</h4>
+                            <div class="data-examples">
+                                <div class="data-item">"The cat sat on the mat"</div>
+                                <div class="data-item">"The dog ran in the park"</div>
+                                <div class="data-item">"Birds fly in the sky"</div>
+                                <div class="data-item">"Fish swim in water"</div>
+                                <div class="data-item">"The cat played with yarn"</div>
+                            </div>
+                            <p class="step-explain">These are example sentences the AI will learn from.</p>
+                        </div>
+
+                        <div class="sim-step hidden" id="sim-step-2">
+                            <h4>Step 2: Finding Patterns</h4>
+                            <div class="pattern-viz">
+                                <svg class="neural-viz" viewBox="0 0 300 150">
+                                    <!-- Input nodes -->
+                                    <circle cx="30" cy="30" r="10" class="node input-node" />
+                                    <circle cx="30" cy="75" r="10" class="node input-node" />
+                                    <circle cx="30" cy="120" r="10" class="node input-node" />
+
+                                    <!-- Hidden nodes -->
+                                    <circle cx="150" cy="50" r="12" class="node hidden-node" />
+                                    <circle cx="150" cy="100" r="12" class="node hidden-node" />
+
+                                    <!-- Output nodes -->
+                                    <circle cx="270" cy="75" r="10" class="node output-node" />
+
+                                    <!-- Connections -->
+                                    <line x1="40" y1="30" x2="138" y2="50" class="connection" />
+                                    <line x1="40" y1="75" x2="138" y2="50" class="connection" />
+                                    <line x1="40" y1="120" x2="138" y2="100" class="connection" />
+                                    <line x1="40" y1="75" x2="138" y2="100" class="connection" />
+                                    <line x1="162" y1="50" x2="260" y2="75" class="connection" />
+                                    <line x1="162" y1="100" x2="260" y2="75" class="connection" />
+                                </svg>
+                                <div class="pattern-labels">
+                                    <span>Words</span>
+                                    <span>Patterns</span>
+                                    <span>Knowledge</span>
+                                </div>
+                            </div>
+                            <p class="step-explain">The AI connects words and finds which words often appear together. The lines get stronger for common patterns!</p>
+                        </div>
+
+                        <div class="sim-step hidden" id="sim-step-3">
+                            <h4>Step 3: Trained Model</h4>
+                            <div class="trained-model-viz">
+                                <div class="model-box">
+                                    <span class="model-icon">🧠</span>
+                                    <h4>Trained AI Model</h4>
+                                    <div class="learned-patterns">
+                                        <div class="pattern-item">✓ "The" often starts sentences</div>
+                                        <div class="pattern-item">✓ Animals do actions</div>
+                                        <div class="pattern-item">✓ "cat" relates to "mat", "yarn"</div>
+                                        <div class="pattern-item">✓ "in" comes before places</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="step-explain">Now the AI has learned patterns! These are stored as numbers inside the model, ready to help generate new text.</p>
+                        </div>
+                    </div>
+
+                    <div class="simulation-controls">
+                        <button id="start-training-btn" class="btn primary-btn" onclick="startTraining()">▶ Start Training</button>
+                        <button id="reset-training-btn" class="btn secondary-btn" onclick="resetTraining()">↺ Reset</button>
+                        <div class="progress-indicator">
+                            <span class="progress-dot active" data-step="1"></span>
+                            <span class="progress-dot" data-step="2"></span>
+                            <span class="progress-dot" data-step="3"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="key-takeaway">
+                    <h3>Key Takeaway</h3>
+                    <p>Training is like teaching by showing many examples. The AI learns the <strong>patterns</strong> in the data, not by memorizing everything, but by understanding what usually goes together!</p>
+                </div>
+            </section>
+
+            <!-- OUTPUT TAB -->
+            <section id="output" class="tab-content">
+                <h1>How AI Creates Answers (Inference)</h1>
+                <p class="section-intro">After training, AI can answer questions. This is called "inference" - let's see how it works!</p>
+
+                <div class="inference-explanation">
+                    <h3>What Happens When You Ask AI a Question?</h3>
+                    <div class="explanation-points">
+                        <div class="point">
+                            <span class="point-number">1</span>
+                            <p><strong>You give input</strong> - your question or prompt goes into the AI.</p>
+                        </div>
+                        <div class="point">
+                            <span class="point-number">2</span>
+                            <p><strong>AI uses its learned patterns</strong> - it thinks about what usually comes next based on its training.</p>
+                        </div>
+                        <div class="point">
+                            <span class="point-number">3</span>
+                            <p><strong>AI predicts the next word</strong> - one word at a time, building a full answer!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Next Word Prediction Visual -->
+                <div class="prediction-visual">
+                    <h3>Next-Word Prediction Explained</h3>
+                    <div class="prediction-demo">
+                        <p class="prediction-prompt">If you type: <strong>"The sun is"</strong></p>
+                        <div class="prediction-flow">
+                            <div class="word-box existing">"The"</div>
+                            <div class="word-box existing">"sun"</div>
+                            <div class="word-box existing">"is"</div>
+                            <div class="word-box predicted" id="predicted-word">?</div>
+                        </div>
+                        <p class="prediction-explain">AI thinks: "What word usually comes after 'The sun is'?"</p>
+                        <p class="prediction-explain">Based on patterns, it might predict: <strong>"shining"</strong>, <strong>"bright"</strong>, or <strong>"hot"</strong></p>
+                    </div>
+                </div>
+
+                <!-- Interactive Demo -->
+                <div class="interactive-demo">
+                    <h3>Try It Yourself!</h3>
+                    <p>Type a short phrase and see how AI would build an answer word by word.</p>
+
+                    <div class="demo-input-area">
+                        <input type="text" id="user-input" placeholder="Type something like 'Explain gravity' or 'What is water'" maxlength="100">
+                        <button class="btn primary-btn" onclick="generateResponse()">Generate Response</button>
+                    </div>
+
+                    <div class="demo-output-area" id="output-display">
+                        <div class="output-flow" id="output-flow">
+                            <div class="flow-stage">
+                                <span class="stage-icon">📝</span>
+                                <span class="stage-label">Your Input</span>
+                                <div class="stage-content" id="stage-input">Waiting for your input...</div>
+                            </div>
+                            <div class="flow-arrow-down">↓</div>
+                            <div class="flow-stage">
+                                <span class="stage-icon">🧠</span>
+                                <span class="stage-label">AI Thinking...</span>
+                                <div class="stage-content" id="stage-thinking">Looking at learned patterns...</div>
+                            </div>
+                            <div class="flow-arrow-down">↓</div>
+                            <div class="flow-stage">
+                                <span class="stage-icon">✨</span>
+                                <span class="stage-label">Generated Output</span>
+                                <div class="stage-content" id="stage-output">
+                                    <span class="typing-text" id="typing-output"></span>
+                                    <span class="cursor">|</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="word-by-word-demo hidden" id="word-demo">
+                        <h4>Word-by-Word Generation:</h4>
+                        <div class="word-sequence" id="word-sequence"></div>
+                    </div>
+                </div>
+
+                <div class="did-you-know">
+                    <strong>💡 Did you know?</strong>
+                    <p>Large Language Models like ChatGPT predict one word (or token) at a time, very fast! They might generate hundreds of words per second, each based on what came before.</p>
+                </div>
+            </section>
+
+            <!-- APPLICATIONS TAB -->
+            <section id="applications" class="tab-content">
+                <h1>AI in Your Field of Study</h1>
+                <p class="section-intro">AI is being used in Physics, Mathematics, and Biology in exciting ways. Let's explore!</p>
+
+                <div class="app-tabs">
+                    <button class="app-tab-btn active" onclick="showAppSection('physics')">🔭 Physics</button>
+                    <button class="app-tab-btn" onclick="showAppSection('mathematics')">📐 Mathematics</button>
+                    <button class="app-tab-btn" onclick="showAppSection('biology')">🧬 Biology</button>
+                </div>
+
+                <!-- Physics Section -->
+                <div class="app-section active" id="app-physics">
+                    <h2>🔭 AI in Physics</h2>
+
+                    <div class="use-cases">
+                        <h3>How AI Helps Physics Students & Researchers:</h3>
+                        <ul class="use-case-list">
+                            <li>
+                                <span class="use-icon">📊</span>
+                                <strong>Analyzing experiment data</strong> - AI can quickly find patterns in large datasets from physics experiments.
+                            </li>
+                            <li>
+                                <span class="use-icon">🖥️</span>
+                                <strong>Running simulations</strong> - AI helps simulate complex physical systems faster than traditional methods.
+                            </li>
+                            <li>
+                                <span class="use-icon">📉</span>
+                                <strong>Reducing errors</strong> - AI can identify and correct measurement errors in lab data.
+                            </li>
+                            <li>
+                                <span class="use-icon">📈</span>
+                                <strong>Visualizing graphs</strong> - AI tools can create beautiful plots and help interpret results.
+                            </li>
+                            <li>
+                                <span class="use-icon">🔍</span>
+                                <strong>Discovering new physics</strong> - AI has helped find new particles and patterns in particle physics data!
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="story-box">
+                        <h4>📖 Student Story</h4>
+                        <p>"Priya is a physics student doing her final year project on pendulum motion. She collected lots of data but making graphs took hours. She used an AI tool to quickly plot all her graphs, fit curves to her data, and even find small errors she missed. Her project was completed in half the time!"</p>
+                    </div>
+                </div>
+
+                <!-- Mathematics Section -->
+                <div class="app-section" id="app-mathematics">
+                    <h2>📐 AI in Mathematics</h2>
+
+                    <div class="use-cases">
+                        <h3>How AI Helps Mathematics Students:</h3>
+                        <ul class="use-case-list">
+                            <li>
+                                <span class="use-icon">✏️</span>
+                                <strong>Solving problems step-by-step</strong> - AI can show how to solve equations, integrals, and more with explanations.
+                            </li>
+                            <li>
+                                <span class="use-icon">✅</span>
+                                <strong>Checking your answers</strong> - Quickly verify if your solution is correct.
+                            </li>
+                            <li>
+                                <span class="use-icon">📊</span>
+                                <strong>Visualizing functions</strong> - AI can draw 2D and 3D graphs of mathematical functions.
+                            </li>
+                            <li>
+                                <span class="use-icon">📝</span>
+                                <strong>Generating practice questions</strong> - AI can create unlimited practice problems for any topic!
+                            </li>
+                            <li>
+                                <span class="use-icon">🧮</span>
+                                <strong>Proving theorems</strong> - Advanced AI is even helping mathematicians prove new theorems!
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="story-box">
+                        <h4>📖 Student Story</h4>
+                        <p>"Rahul was struggling with differential equations. He asked an AI chatbot to explain the concept like he was 10 years old. The AI gave him a simple water-flow analogy that made everything click! Then it generated 20 practice problems from easy to hard, and checked all his answers instantly."</p>
+                    </div>
+
+                    <div class="did-you-know">
+                        <strong>💡 Did you know?</strong>
+                        <p>AI tools like Wolfram Alpha and ChatGPT can solve most undergraduate math problems! But remember - use them to learn, not just to copy answers.</p>
+                    </div>
+                </div>
+
+                <!-- Biology Section -->
+                <div class="app-section" id="app-biology">
+                    <h2>🧬 AI in Biology</h2>
+
+                    <div class="use-cases">
+                        <h3>How AI is Transforming Biology:</h3>
+                        <ul class="use-case-list">
+                            <li>
+                                <span class="use-icon">🧬</span>
+                                <strong>Predicting protein shapes</strong> - AI can predict how proteins fold, which is crucial for understanding diseases.
+                            </li>
+                            <li>
+                                <span class="use-icon">💊</span>
+                                <strong>Drug discovery</strong> - AI helps find new medicines faster by predicting which molecules might work.
+                            </li>
+                            <li>
+                                <span class="use-icon">🔬</span>
+                                <strong>Analyzing medical images</strong> - AI can detect diseases in X-rays, MRIs, and microscope images.
+                            </li>
+                            <li>
+                                <span class="use-icon">🦠</span>
+                                <strong>Classifying cells</strong> - AI can identify different cell types automatically from images.
+                            </li>
+                            <li>
+                                <span class="use-icon">🧪</span>
+                                <strong>Gene analysis</strong> - AI helps analyze DNA sequences and find genetic patterns.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="story-box">
+                        <h4>📖 Student Story</h4>
+                        <p>"Sneha is a biology student interested in proteins. She heard about AlphaFold - an AI that can predict how proteins fold into 3D shapes. Using AlphaFold's database, she could see the predicted structure of a protein she was studying for her assignment, without doing months of lab work!"</p>
+                    </div>
+
+                    <div class="famous-ai-box">
+                        <h4>🏆 Famous AI in Biology: AlphaFold</h4>
+                        <p><strong>What is it?</strong> AlphaFold is an AI made by Google DeepMind.</p>
+                        <p><strong>What does it do?</strong> It predicts the 3D shape of proteins from their amino acid sequence.</p>
+                        <p><strong>Why is this important?</strong> Knowing protein shapes helps us understand diseases and create new medicines. This used to take years in a lab - AlphaFold can do it in minutes!</p>
+                        <p><strong>Impact:</strong> AlphaFold has predicted structures for almost all known proteins - over 200 million! Scientists worldwide use this for free.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CHATBOT TAB -->
+            <section id="chatbot" class="tab-content">
+                <h1>How AI Chatbots Work</h1>
+                <p class="section-intro">You've probably used ChatGPT or similar chatbots. Let's understand what happens behind the scenes!</p>
+
+                <!-- Flow Diagram -->
+                <div class="chatbot-flow-section">
+                    <h3>Inside a Chatbot: Step by Step</h3>
+                    <div class="chatbot-flow-diagram">
+                        <div class="chatbot-step">
+                            <div class="step-circle">1</div>
+                            <div class="step-icon">👤</div>
+                            <h4>You Type a Question</h4>
+                            <p>You write your question or request in the chat box.</p>
+                        </div>
+                        <div class="chatbot-arrow">→</div>
+                        <div class="chatbot-step">
+                            <div class="step-circle">2</div>
+                            <div class="step-icon">📖</div>
+                            <h4>Chatbot Reads & Understands</h4>
+                            <p>The chatbot converts your text into numbers it can process.</p>
+                        </div>
+                        <div class="chatbot-arrow">→</div>
+                        <div class="chatbot-step">
+                            <div class="step-circle">3</div>
+                            <div class="step-icon">🧠</div>
+                            <h4>AI Model Thinks</h4>
+                            <p>The AI uses patterns from training to figure out a good response.</p>
+                        </div>
+                        <div class="chatbot-arrow">→</div>
+                        <div class="chatbot-step">
+                            <div class="step-circle">4</div>
+                            <div class="step-icon">💬</div>
+                            <h4>Chatbot Sends Answer</h4>
+                            <p>The response is converted back to text and shown to you!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detailed Explanation -->
+                <div class="chatbot-details">
+                    <h3>Let's Understand Each Step Better</h3>
+
+                    <div class="detail-card">
+                        <h4>Step 1: You Type a Question</h4>
+                        <p>This is your "input" or "prompt". For example: "What is photosynthesis?"</p>
+                    </div>
+
+                    <div class="detail-card">
+                        <h4>Step 2: Chatbot Reads & Understands</h4>
+                        <p>Your words are broken into small pieces called "tokens" (words or parts of words). Each token is converted to numbers because computers only understand numbers!</p>
+                        <div class="simple-example">
+                            <code>"What is photosynthesis?"</code> → <code>[What] [is] [photo] [synthesis] [?]</code> → <code>[numbers]</code>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <h4>Step 3: AI Model Thinks</h4>
+                        <p>The AI model looks at your question and all the patterns it learned during training. It asks itself: "Based on everything I learned, what would be a helpful answer?"</p>
+                        <p>Then it predicts the answer one word at a time, very fast!</p>
+                    </div>
+
+                    <div class="detail-card">
+                        <h4>Step 4: Chatbot Sends Answer</h4>
+                        <p>The generated text is sent back to you through the chat interface. You see the complete answer on your screen!</p>
+                    </div>
+                </div>
+
+                <!-- Mini Chatbot Demo -->
+                <div class="chatbot-demo-section">
+                    <h3>Try the Demo Chatbot</h3>
+                    <p>This is a simple demo to show the idea. Type a question and see a sample response!</p>
+
+                    <div class="chatbot-demo">
+                        <div class="chat-messages" id="chat-messages">
+                            <div class="chat-message bot">
+                                <span class="message-icon">🤖</span>
+                                <div class="message-content">Hello! I'm a demo chatbot. Ask me something simple like "What is AI?" or "Tell me about gravity".</div>
+                            </div>
+                        </div>
+                        <div class="chat-input-area">
+                            <input type="text" id="chat-input" placeholder="Type your question here..." onkeypress="handleChatKeypress(event)">
+                            <button class="btn primary-btn" onclick="sendChatMessage()">Send</button>
+                        </div>
+                    </div>
+
+                    <div class="demo-note">
+                        <strong>Note:</strong> This is a demo with pre-made responses. Real chatbots like ChatGPT use actual AI models to generate unique answers!
+                    </div>
+                </div>
+
+                <div class="did-you-know">
+                    <strong>💡 Did you know?</strong>
+                    <p>Modern chatbots like ChatGPT have been trained on billions of words from the internet, books, and more. But they don't remember your previous conversations unless specifically designed to!</p>
+                </div>
+            </section>
+        </main>
     </div>
 
-    <!-- Home Section -->
-    <section id="home" class="pt-32 pb-20 bg-tech-pattern relative">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4">
-                        Hi, I'm <span class="ai-gradient-text">Rajesh Pandhare</span>
-                    </h1>
-                    <h2 class="text-2xl md:text-3xl text-gray-600 mb-6">
-                        Tech Lead specialized in <span class="text-blue-600 font-medium">GenAI, AI Agents & RAG</span>
-                    </h2>
-                    <p class="text-gray-600 mb-8 text-lg">
-                        Creating intelligent systems and AI-enhanced applications that deliver substantial business value.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                            Get in Touch
-                        </a>
-                        <a href="#projects" class="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg transition">
-                            View My Work
-                        </a>
-                    </div>
-                </div>
-                <div class="bg-white rounded-xl shadow-xl p-6 border border-blue-100">
-                    <div class="flex items-center space-x-4 mb-6">
-                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
-                            <i class="fas fa-brain text-blue-600 text-2xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold">AI/ML Expertise</h3>
-                            <p class="text-gray-600">GenAI, AI Agents, RAG, VectorDB</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center space-x-4 mb-6">
-                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
-                            <i class="fas fa-database text-blue-600 text-2xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold">Database Specialist</h3>
-                            <p class="text-gray-600">DB2, MySQL, PostgreSQL, MSSQL</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
-                            <i class="fas fa-code text-blue-600 text-2xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold">Full-Stack Developer</h3>
-                            <p class="text-gray-600">Python, C++, Streamlit, React, SQL</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="wave-animation"></div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 section-heading">About Me</h2>
-            <div class="grid md:grid-cols-3 gap-10">
-                <div class="md:col-span-2">
-                    <p class="text-gray-700 mb-6 leading-relaxed">
-                        Senior AI/ML technology leader with over 18 years of software engineering experience specializing in generative AI, retrieval-augmented generation (RAG) and multi-agent orchestration. Proven ability to define and execute AI strategy, build high-performing teams and deliver production-grade AI solutions across industries.
-                    </p>
-                    <p class="text-gray-700 mb-6 leading-relaxed">
-                        Adept at converting unstructured data into actionable business insights using RAG pipelines and LLM agents. Hands-on experience deploying solutions on Google Cloud Platform (GCP), Amazon Web Services (AWS) and Microsoft Azure. Successfully delivered multiple AI/ML proof-of-concepts (POCs) that demonstrated how AI can save time and drive growth for clients.
-                    </p>
-                    <p class="text-gray-700 mb-6 leading-relaxed">
-                        Passionate about aligning AI roadmaps with business objectives and driving innovation within multinational enterprise environments. My expertise spans from database optimization to cutting-edge AI implementations, allowing me to bridge the gap between traditional engineering and advanced AI technologies.
-                    </p>
-                    <div class="flex space-x-4 mt-8">
-                        <a href="https://www.linkedin.com/in/rajeshpandhare/" target="_blank" class="text-blue-600 hover:text-blue-800 transition">
-                            <i class="fab fa-linkedin text-2xl"></i>
-                        </a>
-                        <a href="https://github.com/rajeshkanaka" target="_blank" class="text-blue-600 hover:text-blue-800 transition">
-                            <i class="fab fa-github text-2xl"></i>
-                        </a>
-                        <a href="https://x.com/raje1711" target="_blank" class="text-blue-600 hover:text-blue-800 transition">
-                            <i class="fab fa-twitter text-2xl"></i>
-                        </a>
-                    </div>
-                </div>
-                <div>
-                    <div class="bg-gray-50 p-6 rounded-lg shadow mb-6">
-                        <h3 class="text-xl font-semibold mb-4 text-blue-600">Education</h3>
-                        <div class="mb-4">
-                            <p class="font-medium">M.S. in Software Systems (Data Analytics)</p>
-                            <p class="text-gray-600">Birla Institute of Technology & Science (BITS) WILP, Pilani</p>
-                            <p class="text-gray-500 text-sm">2016 - 2018</p>
-                        </div>
-                        <div class="mb-4">
-                            <p class="font-medium">Postgraduate Diploma in Advanced Computing (C++)</p>
-                            <p class="text-gray-600">Centre for Development of Advanced Computing (CDAC)</p>
-                            <p class="text-gray-500 text-sm">2005</p>
-                        </div>
-                        <div>
-                            <p class="font-medium">BE Computers</p>
-                            <p class="text-gray-600">Pune University</p>
-                            <p class="text-gray-500 text-sm">2004</p>
-                        </div>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-lg shadow">
-                        <h3 class="text-xl font-semibold mb-4 text-blue-600">Certifications</h3>
-                        <div class="mb-4">
-                            <p class="font-medium">Internal Training in Google Cloud and Vector Database Optimization</p>
-                            <p class="text-gray-600">Google Cloud Platform</p>
-                        </div>
-                        <div class="mb-4">
-                            <p class="font-medium">IBM Certified Database Associate</p>
-                            <p class="text-gray-600">IBM</p>
-                            <p class="text-gray-500 text-sm">February 2012</p>
-                        </div>
-                        <div class="mb-4">
-                            <p class="font-medium">DB2 Administration</p>
-                            <p class="text-gray-600">Brainbench Certification</p>
-                            <p class="text-gray-500 text-sm">January 2014</p>
-                        </div>
-                        <div>
-                            <p class="font-medium">DB2 Programming</p>
-                            <p class="text-gray-600">Brainbench Certification</p>
-                            <p class="text-gray-500 text-sm">January 2014</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 section-heading">Professional Experience</h2>
-            <div class="max-w-3xl mx-auto pl-32"> <!-- Added left padding to accommodate dates -->
-                <div class="experience-card">
-                    <div class="experience-date">2020 - Present</div>
-                    <h3 class="text-xl font-bold text-blue-600">Tech Lead (AIML)</h3>
-                    <p class="text-lg font-medium">Kanaka Software</p>
-                    <p class="text-gray-700 mt-2">
-                        Defined and drove the end-to-end AI strategy for TalentPulse360, a competitive-intelligence platform built on Gemini 2.5 Pro and Vertex AI. Led cross-functional teams to design RAG pipelines, orchestrate LLM agents and deploy vector search to deliver real-time insights on the global talent market.
-                    </p>
-                    <ul class="text-gray-700 mt-2 list-disc list-inside space-y-1">
-                        <li>Built scalable data-ingestion pipelines and APIs to ingest, clean and transform diverse data sets while ensuring data quality, security and compliance. Deployed solutions across GCP, AWS and Azure.</li>
-                        <li>Oversaw the architecture, design and deployment of AI-enabled web applications using Python, Streamlit and React. Utilized automated code-review agents (Copilot, Bug-Bot, Claude) to accelerate development while adhering to clean-architecture principles and Google Agent Development Kit (ADK) best practices.</li>
-                        <li>Delivered several AI/ML POCs that showcased how generative AI and multi-agent orchestration can automate analysis, accelerate decision-making and reduce development cycles.</li>
-                        <li>Collaborated with product managers and stakeholders to prioritize AI initiatives and align technology roadmaps with business goals. Mentored engineers on multi-agent orchestration, scalable microservice design and RAG patterns.</li>
-                        <li>Led a cross-functional team of 10 to develop and deploy AI-driven solutions, resulting in a 50% improvement in operational efficiency and a significant reduction in costs for clients.</li>
-                    </ul>
-                    <div class="mt-3 flex flex-wrap">
-                        <span class="tech-badge">GenAI</span>
-                        <span class="tech-badge">AI Agents</span>
-                        <span class="tech-badge">RAG</span>
-                        <span class="tech-badge">VectorDB</span>
-                        <span class="tech-badge">Python</span>
-                        <span class="tech-badge">Streamlit</span>
-                        <span class="tech-badge">React</span>
-                        <span class="tech-badge">GCP</span>
-                        <span class="tech-badge">AWS</span>
-                        <span class="tech-badge">Azure</span>
-                        <span class="tech-badge">Vertex AI</span>
-                        <span class="tech-badge">Gemini 2.5 Pro</span>
-                    </div>
-                </div>
-                
-                <div class="experience-card">
-                    <div class="experience-date">2017 - 2020</div>
-                    <h3 class="text-xl font-bold text-blue-600">Lead Application Engineer</h3>
-                    <p class="text-lg font-medium">Honeywell Process Solutions</p>
-                    <p class="text-gray-700 mt-2">
-                        Led terminal-automation projects for Honeywell's Advance Solutions group, delivering control systems and software for petroleum terminals. Ensured seamless integration with enterprise systems, improving operational efficiency and safety.
-                    </p>
-                    <ul class="text-gray-700 mt-2 list-disc list-inside space-y-1">
-                        <li>Developed technical proposals and conducted client demos; managed requirement analysis, design and implementation using C#, MS SQL, IBM DB2 and Oracle, reducing system downtime and increasing reliability.</li>
-                        <li>Coordinated cross-site teams to deploy automation systems and maintain long-term service contracts while adhering to safety and regulatory standards. Implemented performance tuning and data-integrity measures that improved throughput and reduced maintenance costs.</li>
-                    </ul>
-                    <div class="mt-3 flex flex-wrap">
-                        <span class="tech-badge">C#</span>
-                        <span class="tech-badge">MS SQL</span>
-                        <span class="tech-badge">IBM DB2</span>
-                        <span class="tech-badge">Oracle</span>
-                        <span class="tech-badge">Terminal Automation</span>
-                        <span class="tech-badge">Project Management</span>
-                    </div>
-                </div>
-                
-                <div class="experience-card">
-                    <div class="experience-date">2014 - 2017</div>
-                    <h3 class="text-xl font-bold text-blue-600">Senior Database Administrator / Sr. DBA (Performance)</h3>
-                    <p class="text-lg font-medium">Tieto ÉVRY</p>
-                    <p class="text-gray-700 mt-2">
-                        Diagnosed and resolved complex performance issues by conducting root-cause analyses and delivering remediation plans, reducing incident resolution time by 30%.
-                    </p>
-                    <ul class="text-gray-700 mt-2 list-disc list-inside space-y-1">
-                        <li>Led L2/L3 support teams for mission-critical database services, implementing automation scripts and knowledge-sharing practices that improved efficiency and reduced manual intervention.</li>
-                        <li>Hosted customer workshops on database health and future-proofing, earning accolades for proactive risk management and collaborative communication.</li>
-                    </ul>
-                    <div class="mt-3 flex flex-wrap">
-                        <span class="tech-badge">DB2 LUW</span>
-                        <span class="tech-badge">Zos Mainframe</span>
-                        <span class="tech-badge">Oracle</span>
-                        <span class="tech-badge">MySQL</span>
-                        <span class="tech-badge">Performance Tuning</span>
-                    </div>
-                </div>
-                
-                <div class="experience-card">
-                    <div class="experience-date">2008 - 2014</div>
-                    <h3 class="text-xl font-bold text-blue-600">Developer & Database Administrator (IBM DB2)</h3>
-                    <p class="text-lg font-medium">ACI Worldwide</p>
-                    <p class="text-gray-700 mt-2">
-                        Administered enterprise databases (IBM DB2, MySQL, PostgreSQL) with a focus on performance tuning, capacity planning and disaster-recovery testing to ensure data integrity and high availability.
-                    </p>
-                    <ul class="text-gray-700 mt-2 list-disc list-inside space-y-1">
-                        <li>Developed optimization tools and provided guidance on efficient SQL, stored procedures and complex queries, supporting financial transactions and improving system performance.</li>
-                        <li>Managed data migrations, replication and indexing strategies, enhancing data quality and security and reducing data retrieval times.</li>
-                    </ul>
-                    <div class="mt-3 flex flex-wrap">
-                        <span class="tech-badge">IBM DB2</span>
-                        <span class="tech-badge">MySQL</span>
-                        <span class="tech-badge">PostgreSQL</span>
-                        <span class="tech-badge">Performance Architecture</span>
-                        <span class="tech-badge">SQL Optimization</span>
-                    </div>
-                </div>
-                
-                <div class="experience-card">
-                    <div class="experience-date">2005 - 2008</div>
-                    <h3 class="text-xl font-bold text-blue-600">C++/MSSQL Developer</h3>
-                    <p class="text-lg font-medium">Honeywell</p>
-                    <p class="text-gray-700 mt-2">
-                        Developed device drivers for card readers, flow controllers and radar gauges, contributing to embedded firmware and test harnesses that improved system integration and performance.
-                    </p>
-                    <ul class="text-gray-700 mt-2 list-disc list-inside space-y-1">
-                        <li>Designed and optimized database interfaces using MSSQL and PL/SQL, improving data-acquisition software performance and reducing system latency.</li>
-                        <li>Implemented performance tuning and database administration best practices, reducing system downtime and increasing data-retrieval efficiency.</li>
-                    </ul>
-                    <div class="mt-3 flex flex-wrap">
-                        <span class="tech-badge">C++</span>
-                        <span class="tech-badge">MSSQL</span>
-                        <span class="tech-badge">PL/SQL</span>
-                        <span class="tech-badge">Embedded Systems</span>
-                        <span class="tech-badge">Device Drivers</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 section-heading">Technical Skills</h2>
-            <div class="grid md:grid-cols-2 gap-10">
-                <div>
-                    <h3 class="text-xl font-bold mb-6 text-blue-600">AI & Machine Learning</h3>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">Generative AI</span>
-                            <span>95%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 95%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">AI Agents Development</span>
-                            <span>90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">RAG (Retrieval Augmented Generation)</span>
-                            <span>92%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 92%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">Vector Databases</span>
-                            <span>88%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 88%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">Machine Learning</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">Data Mining & Analytics</span>
-                            <span>87%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 87%"></div>
-                        </div>
-                    </div>
-                    
-                    <h3 class="text-xl font-bold mb-6 mt-10 text-blue-600">Cloud Platforms</h3>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">Google Cloud Platform (GCP)</span>
-                            <span>90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">Amazon Web Services (AWS)</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">Microsoft Azure</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    
-                    <h3 class="text-xl font-bold mb-6 mt-10 text-blue-600">Database Technologies</h3>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">IBM DB2</span>
-                            <span>98%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 98%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">MySQL</span>
-                            <span>95%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 95%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">PostgreSQL</span>
-                            <span>90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">MS SQL</span>
-                            <span>92%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 92%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">Oracle</span>
-                            <span>88%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 88%"></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div>
-                    <h3 class="text-xl font-bold mb-6 text-blue-600">Programming Languages</h3>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">Python</span>
-                            <span>90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">NodeJS</span>
-                            <span>88%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 88%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">Golang</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">C#</span>
-                            <span>82%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 82%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">C++</span>
-                            <span>80%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 80%"></div>
-                        </div>
-                    </div>
-                    
-                    <h3 class="text-xl font-bold mb-6 mt-10 text-blue-600">Web Development</h3>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">Streamlit</span>
-                            <span>92%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 92%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">React</span>
-                            <span>88%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 88%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">Vue.js</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">RESTful APIs</span>
-                            <span>92%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 92%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">Full-Stack Development</span>
-                            <span>87%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 87%"></div>
-                        </div>
-                    </div>
-                    
-                    <h3 class="text-xl font-bold mb-6 mt-10 text-blue-600">Other Skills</h3>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">Performance Optimization</span>
-                            <span>95%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 95%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">Technical Leadership</span>
-                            <span>90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">Problem Solving</span>
-                            <span>93%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 93%"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 section-heading">Featured Projects</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-lg shadow-md overflow-hidden project-card">
-                    <div class="bg-blue-600 h-3"></div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">AI-Powered Server Performance Monitor</h3>
-                        <p class="text-gray-600 mb-4">
-                            A next-level Python tool that provides real-time insights into Debian server performance during load or stress tests, going beyond typical industry standards.
-                        </p>
-                        <div class="flex flex-wrap mb-4">
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">Machine Learning</span>
-                            <span class="tech-badge">DevOps</span>
-                            <span class="tech-badge">Performance Analytics</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <a href="https://github.com/rajeshkanaka" target="_blank" class="text-blue-600 hover:text-blue-800 transition flex items-center">
-                                <span>View on GitHub</span>
-                                <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-md overflow-hidden project-card">
-                    <div class="bg-blue-600 h-3"></div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">MacOS Finder Integration for Cursor IDE</h3>
-                        <p class="text-gray-600 mb-4">
-                            A custom integration that enhances productivity by enabling seamless opening of files and projects in Cursor IDE directly from macOS Finder.
-                        </p>
-                        <div class="flex flex-wrap mb-4">
-                            <span class="tech-badge">macOS</span>
-                            <span class="tech-badge">Shell</span>
-                            <span class="tech-badge">Developer Tools</span>
-                            <span class="tech-badge">Automation</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <a href="https://github.com/rajeshkanaka/open-with-cursor-mac" target="_blank" class="text-blue-600 hover:text-blue-800 transition flex items-center">
-                                <span>View on GitHub</span>
-                                <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-md overflow-hidden project-card">
-                    <div class="bg-blue-600 h-3"></div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">RAG-Powered Enterprise Knowledge Base</h3>
-                        <p class="text-gray-600 mb-4">
-                            An intelligent enterprise knowledge system using Retrieval Augmented Generation to provide accurate, context-aware responses from company documentation.
-                        </p>
-                        <div class="flex flex-wrap mb-4">
-                            <span class="tech-badge">RAG</span>
-                            <span class="tech-badge">Vector Database</span>
-                            <span class="tech-badge">Natural Language Processing</span>
-                            <span class="tech-badge">Python</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <a href="#" class="text-blue-600 hover:text-blue-800 transition flex items-center">
-                                <span>Project Details</span>
-                                <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-md overflow-hidden project-card">
-                    <div class="bg-blue-600 h-3"></div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">Autonomous AI Agent Framework</h3>
-                        <p class="text-gray-600 mb-4">
-                            A modular framework for building autonomous AI agents that can perform complex tasks through tool integration, planning, and continuous learning.
-                        </p>
-                        <div class="flex flex-wrap mb-4">
-                            <span class="tech-badge">AI Agents</span>
-                            <span class="tech-badge">GenAI</span>
-                            <span class="tech-badge">LLM</span>
-                            <span class="tech-badge">Node.js</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <a href="#" class="text-blue-600 hover:text-blue-800 transition flex items-center">
-                                <span>Project Details</span>
-                                <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-md overflow-hidden project-card">
-                    <div class="bg-blue-600 h-3"></div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">High-Performance Query Optimizer</h3>
-                        <p class="text-gray-600 mb-4">
-                            An advanced SQL query optimization tool that automatically identifies and rewrites inefficient queries for dramatically improved database performance.
-                        </p>
-                        <div class="flex flex-wrap mb-4">
-                            <span class="tech-badge">SQL</span>
-                            <span class="tech-badge">Performance Optimization</span>
-                            <span class="tech-badge">DB2</span>
-                            <span class="tech-badge">Oracle</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <a href="#" class="text-blue-600 hover:text-blue-800 transition flex items-center">
-                                <span>Project Details</span>
-                                <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-md overflow-hidden project-card">
-                    <div class="bg-blue-600 h-3"></div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">Developer Command Cheatsheets</h3>
-                        <p class="text-gray-600 mb-4">
-                            Contributed to collaborative cheatsheets for console commands, making complex command-line operations accessible to developers of all levels.
-                        </p>
-                        <div class="flex flex-wrap mb-4">
-                            <span class="tech-badge">Markdown</span>
-                            <span class="tech-badge">Documentation</span>
-                            <span class="tech-badge">Developer Tools</span>
-                            <span class="tech-badge">Open Source</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <a href="https://github.com/tldr-pages/tldr" target="_blank" class="text-blue-600 hover:text-blue-800 transition flex items-center">
-                                <span>View on GitHub</span>
-                                <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Publications Section -->
-    <section id="publications" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 section-heading">Publications & Presentations</h2>
-            <div class="max-w-4xl mx-auto">
-                <div class="bg-gray-50 rounded-lg p-6 mb-6 shadow-sm publication-card">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between">
-                        <div>
-                            <h3 class="text-xl font-bold text-blue-600">OpenAI o1 Models Podcast</h3>
-                            <p class="text-gray-600 mt-1">
-                                Audio insights breaking down complex AI concepts from OpenAI's revolutionary o1 models.
-                            </p>
-                            <p class="text-gray-500 text-sm mt-2">April 2025</p>
-                        </div>
-                        <a href="https://soundcloud.com/rajesh-pandhare/openai-o1-models" target="_blank" class="mt-4 md:mt-0 bg-blue-100 text-blue-600 px-4 py-2 rounded-md hover:bg-blue-200 transition flex items-center">
-                            <i class="fas fa-headphones mr-2"></i>
-                            <span>Listen</span>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="bg-gray-50 rounded-lg p-6 mb-6 shadow-sm publication-card">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between">
-                        <div>
-                            <h3 class="text-xl font-bold text-blue-600">IDUG EMEA Dublin 2015: DB2 Community Leader Award</h3>
-                            <p class="text-gray-600 mt-1">
-                                Received the DB2 Community Leader Award from IBM and IDUG at the EMEA conference in Dublin.
-                            </p>
-                            <p class="text-gray-500 text-sm mt-2">January 25, 2015</p>
-                        </div>
-                        <a href="https://www.linkedin.com/pulse/idug-emea-dublin-2015-got-db2-community-leader-award-from-pandhare" target="_blank" class="mt-4 md:mt-0 bg-blue-100 text-blue-600 px-4 py-2 rounded-md hover:bg-blue-200 transition flex items-center">
-                            <i class="fas fa-external-link-alt mr-2"></i>
-                            <span>Read Article</span>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="bg-gray-50 rounded-lg p-6 mb-6 shadow-sm publication-card">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between">
-                        <div>
-                            <h3 class="text-xl font-bold text-blue-600">Presentation at IDUG Chennai</h3>
-                            <p class="text-gray-600 mt-1">
-                                Featured speaker at the International DB2 Users Group (IDUG) conference in Chennai.
-                            </p>
-                            <p class="text-gray-500 text-sm mt-2">March 28, 2017</p>
-                        </div>
-                        <a href="https://www.linkedin.com/pulse/presented-idug-chennai-28th-march-2017-rajesh-pandhare" target="_blank" class="mt-4 md:mt-0 bg-blue-100 text-blue-600 px-4 py-2 rounded-md hover:bg-blue-200 transition flex items-center">
-                            <i class="fas fa-external-link-alt mr-2"></i>
-                            <span>Read Article</span>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="bg-gray-50 rounded-lg p-6 mb-6 shadow-sm publication-card">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between">
-                        <div>
-                            <h3 class="text-xl font-bold text-blue-600">YouDunnit Award for Customer/Stakeholder Delight</h3>
-                            <p class="text-gray-600 mt-1">
-                                Received recognition for exceptional work in performance optimization and customer support at Tieto.
-                            </p>
-                            <p class="text-gray-500 text-sm mt-2">July 1, 2017</p>
-                        </div>
-                        <a href="https://www.linkedin.com/pulse/received-youdunnit-award-category-customerstakeholder-rajesh-pandhare" target="_blank" class="mt-4 md:mt-0 bg-blue-100 text-blue-600 px-4 py-2 rounded-md hover:bg-blue-200 transition flex items-center">
-                            <i class="fas fa-external-link-alt mr-2"></i>
-                            <span>Read Article</span>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="bg-gray-50 rounded-lg p-6 mb-6 shadow-sm publication-card">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between">
-                        <div>
-                            <h3 class="text-xl font-bold text-blue-600">DB2's GOT TALENT 2015 First Place Winner</h3>
-                            <p class="text-gray-600 mt-1">
-                                Won first place in the international DB2's GOT TALENT 2015 contest sponsored by DBI Software, IDUG, KBCE, and Triton Consulting.
-                            </p>
-                            <p class="text-gray-500 text-sm mt-2">2015</p>
-                        </div>
-                        <a href="#" class="mt-4 md:mt-0 bg-blue-100 text-blue-600 px-4 py-2 rounded-md hover:bg-blue-200 transition flex items-center">
-                            <i class="fas fa-trophy mr-2"></i>
-                            <span>Achievement</span>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="text-center mt-10">
-                    <p class="text-gray-700 mb-6">
-                        Rajesh is an active contributor to the AI and database communities, sharing insights on the latest technologies and best practices.
-                    </p>
-                    <div class="flex justify-center space-x-4">
-                        <a href="https://www.linkedin.com/today/author/rajeshpandhare" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition flex items-center">
-                            <i class="fab fa-linkedin mr-2"></i>
-                            <span>LinkedIn Articles</span>
-                        </a>
-                        <a href="https://x.com/raje1711" target="_blank" class="bg-gray-800 hover:bg-black text-white px-6 py-3 rounded-lg transition flex items-center">
-                            <i class="fab fa-twitter mr-2"></i>
-                            <span>Twitter Updates</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-800 text-white relative">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 section-heading text-white">Get In Touch</h2>
-            <div class="grid md:grid-cols-2 gap-10">
-                <div>
-                    <p class="text-gray-300 mb-8 leading-relaxed">
-                        I'm always interested in discussing new projects, innovative ideas, or opportunities to be part of your team. Whether you have a question or just want to say hi, feel free to reach out!
-                    </p>
-                    
-                    <div class="flex items-start mb-6">
-                        <div class="mr-4 text-blue-400">
-                            <i class="fas fa-map-marker-alt text-2xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-white">Location</h3>
-                            <p class="text-gray-300">Pune, Maharashtra, India</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start mb-6">
-                        <div class="mr-4 text-blue-400">
-                            <i class="fas fa-envelope text-2xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-white">Email</h3>
-                            <p class="text-gray-300">pandharerajesh@gmail.com</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start mb-10">
-                        <div class="mr-4 text-blue-400">
-                            <i class="fas fa-briefcase text-2xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-white">Employment</h3>
-                            <p class="text-gray-300">Tech Lead at Kanaka Software</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex space-x-4">
-                        <a href="https://www.linkedin.com/in/rajeshpandhare/" target="_blank" class="bg-gray-700 hover:bg-gray-600 w-12 h-12 rounded-full flex items-center justify-center transition">
-                            <i class="fab fa-linkedin-in text-xl"></i>
-                        </a>
-                        <a href="https://github.com/rajeshkanaka" target="_blank" class="bg-gray-700 hover:bg-gray-600 w-12 h-12 rounded-full flex items-center justify-center transition">
-                            <i class="fab fa-github text-xl"></i>
-                        </a>
-                        <a href="https://x.com/raje1711" target="_blank" class="bg-gray-700 hover:bg-gray-600 w-12 h-12 rounded-full flex items-center justify-center transition">
-                            <i class="fab fa-twitter text-xl"></i>
-                        </a>
-                        <a href="https://soundcloud.com/rajesh-pandhare" target="_blank" class="bg-gray-700 hover:bg-gray-600 w-12 h-12 rounded-full flex items-center justify-center transition">
-                            <i class="fab fa-soundcloud text-xl"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="bg-gray-700 rounded-lg p-8">
-                    <h3 class="text-2xl font-bold mb-6">Send Me a Message</h3>
-                    <form>
-                        <div class="mb-4">
-                            <label for="name" class="block text-gray-300 mb-2">Name</label>
-                            <input type="text" id="name" class="w-full px-4 py-2 rounded-md bg-gray-800 border border-gray-600 text-white focus:outline-none focus:border-blue-500">
-                        </div>
-                        
-                        <div class="mb-4">
-                            <label for="email" class="block text-gray-300 mb-2">Email</label>
-                            <input type="email" id="email" class="w-full px-4 py-2 rounded-md bg-gray-800 border border-gray-600 text-white focus:outline-none focus:border-blue-500">
-                        </div>
-                        
-                        <div class="mb-4">
-                            <label for="subject" class="block text-gray-300 mb-2">Subject</label>
-                            <input type="text" id="subject" class="w-full px-4 py-2 rounded-md bg-gray-800 border border-gray-600 text-white focus:outline-none focus:border-blue-500">
-                        </div>
-                        
-                        <div class="mb-6">
-                            <label for="message" class="block text-gray-300 mb-2">Message</label>
-                            <textarea id="message" rows="5" class="w-full px-4 py-2 rounded-md bg-gray-800 border border-gray-600 text-white focus:outline-none focus:border-blue-500"></textarea>
-                        </div>
-                        
-                        <button type="button" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition w-full">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-8 bg-gray-900 text-gray-400 text-sm">
-        <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2025 Rajesh Pandhare. All rights reserved.</p>
-            <p class="mt-2">Tech Lead specializing in GenAI, AI Agents, and RAG implementations</p>
-        </div>
-    </footer>
-
-    <script>
-        // Mobile menu toggle
-        const btn = document.querySelector("button.mobile-menu-button");
-        const menu = document.querySelector(".mobile-menu");
-        
-        btn.addEventListener("click", () => {
-            menu.classList.toggle("hidden");
-        });
-        
-        // Close mobile menu when clicking a link
-        const mobileLinks = document.querySelectorAll(".mobile-menu a");
-        mobileLinks.forEach(link => {
-            link.addEventListener("click", () => {
-                menu.classList.add("hidden");
-            });
-        });
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>
