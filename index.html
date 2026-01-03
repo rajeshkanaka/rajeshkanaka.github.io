@@ -3,671 +3,1375 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basics of AI</title>
-    <link rel="stylesheet" href="styles.css?v=2.0-premium">
+    <title>INMEC 2026 - International Conference on Interdisciplinary Advances</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+        
+        :root {
+            /* Premium Modern Color Palette */
+            --primary-deep: #0F172A;
+            --primary-slate: #1E293B;
+            --primary-blue: #3B82F6;
+            --accent-cyan: #06B6D4;
+            --accent-violet: #8B5CF6;
+            --accent-emerald: #10B981;
+            --accent-amber: #F59E0B;
+            --neutral-50: #F8FAFC;
+            --neutral-100: #F1F5F9;
+            --neutral-200: #E2E8F0;
+            --neutral-300: #CBD5E1;
+            --neutral-600: #475569;
+            --neutral-700: #334155;
+            --neutral-800: #1E293B;
+            --neutral-900: #0F172A;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-accent: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-cool: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gradient-warm: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            --gradient-dark: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            color: var(--neutral-700);
+            background: var(--neutral-50);
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            opacity: 0.03;
+        }
+
+        .animated-bg::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: backgroundMove 60s linear infinite;
+        }
+
+        @keyframes backgroundMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: var(--shadow-2xl);
+            position: relative;
+        }
+
+        /* Premium Navigation Bar */
+        .nav-bar {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--neutral-200);
+            padding: 20px 40px;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--neutral-700);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section - Ultra Modern */
+        .hero {
+            position: relative;
+            background: var(--gradient-dark);
+            color: white;
+            padding: 120px 60px;
+            overflow: hidden;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
+            animation: heroGlow 15s ease-in-out infinite;
+        }
+
+        @keyframes heroGlow {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .hero-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 100px 100px;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(100px, 100px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 1100px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 10px 24px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 6rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #ffffff 0%, #a0aec0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.8);
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .hero .conference-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.9);
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 50px;
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--gradient-cool);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+        }
+
+        .hero-stat-label {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 5px;
+        }
+
+        .partner-section {
+            margin-top: 60px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            animation: fadeInUp 1s ease-out 1s both;
+        }
+
+        .partner-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .partner-card {
+            text-align: left;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .partner-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .partner-card p {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+
+        /* Floating Dates Section */
+        .dates-section {
+            padding: 100px 60px;
+            position: relative;
+            background: var(--neutral-50);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-label {
+            display: inline-block;
+            padding: 8px 20px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--neutral-900);
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+
+        .section-description {
+            font-size: 1.2rem;
+            color: var(--neutral-600);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .dates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .date-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--neutral-200);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .date-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .date-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-2xl);
+            border-color: transparent;
+        }
+
+        .date-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .date-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .date-card h3 {
+            font-size: 1.1rem;
+            color: var(--neutral-600);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .date-card .date {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--neutral-900);
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* Content Sections with Glass Morphism */
+        .section {
+            padding: 100px 60px;
+            position: relative;
+        }
+
+        .section:nth-child(even) {
+            background: white;
+        }
+
+        .section:nth-child(odd) {
+            background: var(--neutral-50);
+        }
+
+        /* About Cards with Gradient Borders */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .about-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            position: relative;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.4s ease;
+            border: 1px solid var(--neutral-200);
+        }
+
+        .about-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            padding: 2px;
+            background: var(--gradient-primary);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .about-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .about-card:hover::before {
+            opacity: 1;
+        }
+
+        .about-card-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-primary);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 25px;
+        }
+
+        .about-card h3 {
+            font-size: 1.5rem;
+            color: var(--neutral-900);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .about-card p {
+            color: var(--neutral-600);
+            line-height: 1.8;
+        }
+
+        /* Objectives with Modern Design */
+        .objectives-list {
+            list-style: none;
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .objectives-list li {
+            padding: 25px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow-md);
+            border-left: 4px solid var(--primary-blue);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: start;
+            gap: 15px;
+        }
+
+        .objectives-list li::before {
+            content: "✓";
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .objectives-list li:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Conference Tracks - Premium Cards */
+        .tracks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .track-card {
+            background: white;
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--neutral-200);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .track-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 0;
+        }
+
+        .track-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-2xl);
+            border-color: transparent;
+        }
+
+        .track-card:hover::after {
+            opacity: 0.05;
+        }
+
+        .track-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .track-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .track-card h4 {
+            font-size: 1.4rem;
+            color: var(--neutral-900);
+            margin-bottom: 20px;
+            font-weight: 700;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .track-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .track-card li {
+            padding: 12px 0;
+            padding-left: 25px;
+            position: relative;
+            font-size: 0.95rem;
+            color: var(--neutral-600);
+            transition: all 0.3s ease;
+        }
+
+        .track-card li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .track-card li:hover {
+            color: var(--neutral-900);
+            padding-left: 30px;
+        }
+
+        .track-card li:hover::before {
+            left: 5px;
+        }
+
+        /* Committee Section - Modern Layout */
+        .committee-section {
+            background: var(--gradient-dark);
+            color: white;
+        }
+
+        .committee-section .section-title {
+            color: white;
+        }
+
+        .committee-section .section-description {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .committee-category {
+            margin-top: 50px;
+        }
+
+        .committee-category h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: white;
+            font-weight: 700;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .committee-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .committee-member {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .committee-member:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .committee-member strong {
+            color: white;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+        }
+
+        .committee-member span {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Submission Section - Call to Action */
+        .submission-section {
+            background: var(--gradient-primary);
+            color: white;
+            text-align: center;
+            padding: 120px 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submission-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+        }
+
+        .submission-section .section-title {
+            color: white;
+        }
+
+        .submission-box {
+            background: white;
+            color: var(--neutral-700);
+            padding: 60px;
+            border-radius: 30px;
+            margin-top: 50px;
+            box-shadow: var(--shadow-2xl);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .submission-box h3 {
+            font-size: 2rem;
+            color: var(--neutral-900);
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .submission-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .submission-feature {
+            text-align: center;
+        }
+
+        .submission-feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 15px;
+        }
+
+        .submission-feature h4 {
+            font-size: 1.1rem;
+            color: var(--neutral-900);
+            margin-bottom: 8px;
+        }
+
+        .submission-feature p {
+            font-size: 0.9rem;
+            color: var(--neutral-600);
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 20px 50px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        /* Footer - Premium */
+        .footer {
+            background: var(--neutral-900);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 60px 60px 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .footer-section p {
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Scroll Progress Bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 4rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 30px;
+                min-height: auto;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero .conference-title {
+                font-size: 1.5rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .partner-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 60px 30px;
+            }
+
+            .dates-section {
+                padding: 60px 30px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .dates-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-bar {
+                padding: 15px 20px;
+            }
+
+            .submission-box {
+                padding: 40px 30px;
+            }
+
+            .footer {
+                padding: 40px 30px 20px;
+            }
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Smooth Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
-    <div class="app-container">
-        <!-- Navigation Sidebar -->
-        <nav class="sidebar">
-            <div class="nav-header">
-                <h2>Basics of AI</h2>
-            </div>
-            <ul class="nav-menu">
-                <li class="nav-item active" data-tab="home">
-                    <span class="nav-icon">🏠</span>
-                    <span>Home</span>
-                </li>
-                <li class="nav-item" data-tab="basics">
-                    <span class="nav-icon">📚</span>
-                    <span>Basics</span>
-                </li>
-                <li class="nav-item" data-tab="internals">
-                    <span class="nav-icon">⚙️</span>
-                    <span>Internals</span>
-                </li>
-                <li class="nav-item" data-tab="output">
-                    <span class="nav-icon">💡</span>
-                    <span>Output</span>
-                </li>
-                <li class="nav-item" data-tab="applications">
-                    <span class="nav-icon">🔬</span>
-                    <span>Applications</span>
-                </li>
-                <li class="nav-item" data-tab="chatbot">
-                    <span class="nav-icon">🤖</span>
-                    <span>Chatbot</span>
-                </li>
+    <div class="animated-bg"></div>
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <div class="container">
+        <!-- Premium Navigation -->
+        <nav class="nav-bar">
+            <div class="nav-logo">INMEC 2026</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#dates">Dates</a></li>
+                <li><a href="#tracks">Tracks</a></li>
+                <li><a href="#committee">Committee</a></li>
+                <li><a href="#submit">Submit</a></li>
             </ul>
         </nav>
 
-        <!-- Main Content Area -->
-        <main class="content">
-            <!-- HOME TAB -->
-            <section id="home" class="tab-content active">
-                <div class="home-hero">
-                    <h1 class="main-title">Basics of AI</h1>
-                    <p class="author-line">Author: Rajesh Pandhare, Kanaka Software</p>
-                    <div class="welcome-box">
-                        <h2>Welcome! 👋</h2>
-                        <p>This app will teach you the basic ideas of <strong>Artificial Intelligence (AI)</strong> in very simple language.</p>
-                        <p>You do <strong>not</strong> need any coding skills or AI background to use this app.</p>
-                        <p>Just click on the tabs on the left to start learning!</p>
+        <!-- Hero Section -->
+        <header class="hero">
+            <div class="hero-grid"></div>
+            <div class="hero-content">
+                <div class="hero-badge">🎓 Academic Excellence • Industry Innovation</div>
+                <h1>INMEC 2026</h1>
+                <p class="subtitle">International Conference on Interdisciplinary Advances in</p>
+                <p class="conference-title">Mechanical, Electronics, and Computer Engineering</p>
+                
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">2</span>
+                        <span class="hero-stat-label">Days Conference</span>
                     </div>
-                    <div class="quick-start">
-                        <h3>Where to Start?</h3>
-                        <div class="start-cards">
-                            <div class="start-card" onclick="navigateToTab('basics')">
-                                <span class="card-icon">📚</span>
-                                <h4>Basics</h4>
-                                <p>Learn what AI, ML, and other terms mean</p>
-                            </div>
-                            <div class="start-card" onclick="navigateToTab('internals')">
-                                <span class="card-icon">⚙️</span>
-                                <h4>Internals</h4>
-                                <p>See how AI learns from data</p>
-                            </div>
-                            <div class="start-card" onclick="navigateToTab('applications')">
-                                <span class="card-icon">🔬</span>
-                                <h4>Applications</h4>
-                                <p>Discover AI uses in Physics, Math, Biology</p>
-                            </div>
-                        </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">7</span>
+                        <span class="hero-stat-label">Research Tracks</span>
                     </div>
-                </div>
-            </section>
-
-            <!-- BASICS TAB -->
-            <section id="basics" class="tab-content">
-                <h1>Understanding AI Basics</h1>
-                <p class="section-intro">Let's learn some important terms. Don't worry - we'll explain everything in simple words!</p>
-
-                <!-- AI Concept Flow Diagram -->
-                <div class="diagram-container">
-                    <h3>How AI Works (Simple View)</h3>
-                    <div class="flow-diagram">
-                        <div class="flow-box input-box">
-                            <span class="flow-icon">📊</span>
-                            <p><strong>Data</strong></p>
-                            <p class="small-text">Text, images, numbers</p>
-                        </div>
-                        <div class="flow-arrow">→</div>
-                        <div class="flow-box process-box">
-                            <span class="flow-icon">🧠</span>
-                            <p><strong>AI Model</strong></p>
-                            <p class="small-text">Finds patterns</p>
-                        </div>
-                        <div class="flow-arrow">→</div>
-                        <div class="flow-box output-box">
-                            <span class="flow-icon">✨</span>
-                            <p><strong>Useful Output</strong></p>
-                            <p class="small-text">Answers, predictions</p>
-                        </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">50+</span>
+                        <span class="hero-stat-label">Topics Covered</span>
                     </div>
                 </div>
 
-                <!-- Concept Cards -->
-                <div class="concept-grid">
-                    <!-- AI -->
-                    <div class="concept-card">
-                        <div class="concept-header">
-                            <span class="concept-icon">🤖</span>
-                            <h2>What is AI (Artificial Intelligence)?</h2>
+                <div class="partner-section">
+                    <h2 style="margin-bottom: 20px; font-size: 1.3rem;">Organized By</h2>
+                    <div class="partner-grid">
+                        <div class="partner-card">
+                            <h3>🏛️ Keystone School of Engineering</h3>
+                            <p>Affiliated to Savitribai Phule Pune University (SPPU)<br>
+                            Approved by AICTE, New Delhi & DTE Maharashtra</p>
                         </div>
-                        <div class="concept-body">
-                            <p><strong>Simple Definition:</strong></p>
-                            <p>AI means making computers do tasks that normally need human thinking. The computer can learn from examples and make decisions on its own.</p>
-
-                            <div class="examples-box">
-                                <h4>Real-Life Examples:</h4>
-                                <ul>
-                                    <li>📱 When your phone recognizes your face to unlock - that's AI!</li>
-                                    <li>🎵 When Spotify suggests songs you might like - that's AI!</li>
-                                    <li>📧 When Gmail filters spam emails automatically - that's AI!</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- ML -->
-                    <div class="concept-card">
-                        <div class="concept-header">
-                            <span class="concept-icon">📈</span>
-                            <h2>What is Machine Learning (ML)?</h2>
-                        </div>
-                        <div class="concept-body">
-                            <p><strong>Simple Definition:</strong></p>
-                            <p>Machine Learning is a type of AI where computers learn from examples instead of being given exact rules. It's like teaching a child by showing many pictures, not by giving a rulebook.</p>
-
-                            <div class="examples-box">
-                                <h4>Real-Life Examples:</h4>
-                                <ul>
-                                    <li>📸 Photo apps that group pictures of the same person together</li>
-                                    <li>🛒 Online shops that show "You might also like..." products</li>
-                                    <li>📝 Your phone keyboard predicting the next word as you type</li>
-                                </ul>
-                            </div>
-
-                            <div class="did-you-know">
-                                <strong>💡 Did you know?</strong>
-                                <p>Machine Learning is like how you learned to recognize fruits. Nobody gave you rules like "if it's red and round, it's an apple." You just saw many apples and learned!</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- GenAI -->
-                    <div class="concept-card">
-                        <div class="concept-header">
-                            <span class="concept-icon">✨</span>
-                            <h2>What is Generative AI (GenAI)?</h2>
-                        </div>
-                        <div class="concept-body">
-                            <p><strong>Simple Definition:</strong></p>
-                            <p>Generative AI is AI that can <em>create new things</em> - like writing text, making images, or composing music. It doesn't just recognize or classify; it generates something new!</p>
-
-                            <div class="examples-box">
-                                <h4>Real-Life Examples:</h4>
-                                <ul>
-                                    <li>💬 ChatGPT writing answers to your questions</li>
-                                    <li>🎨 DALL-E or Midjourney creating pictures from your descriptions</li>
-                                    <li>📝 AI helping you write essays or summarize long articles</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- AI Agents -->
-                    <div class="concept-card">
-                        <div class="concept-header">
-                            <span class="concept-icon">🦾</span>
-                            <h2>What are AI Agents?</h2>
-                        </div>
-                        <div class="concept-body">
-                            <p><strong>Simple Definition:</strong></p>
-                            <p>AI Agents are AI systems that can take actions on their own to complete tasks. They can plan steps, use tools, and work towards a goal - like a helpful assistant that can actually do things for you.</p>
-
-                            <div class="examples-box">
-                                <h4>Real-Life Examples:</h4>
-                                <ul>
-                                    <li>📅 An AI that can book appointments for you by checking your calendar and sending emails</li>
-                                    <li>🔍 An AI assistant that can search the internet, read articles, and give you a summary</li>
-                                    <li>🛒 A shopping assistant that compares prices across websites and finds the best deal</li>
-                                </ul>
-                            </div>
-
-                            <div class="did-you-know">
-                                <strong>💡 Did you know?</strong>
-                                <p>Think of AI Agents like a very smart helper. Instead of just answering questions, they can actually do tasks step by step!</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- RAG -->
-                    <div class="concept-card">
-                        <div class="concept-header">
-                            <span class="concept-icon">📚</span>
-                            <h2>What is RAG (Retrieval-Augmented Generation)?</h2>
-                        </div>
-                        <div class="concept-body">
-                            <p><strong>Simple Definition:</strong></p>
-                            <p>RAG is a method where AI first <em>searches for relevant information</em> (like looking in a library) and then uses that information to give you a better answer. It combines searching with generating.</p>
-
-                            <div class="examples-box">
-                                <h4>Real-Life Example:</h4>
-                                <ul>
-                                    <li>Imagine asking a question about your college syllabus. RAG would:
-                                        <ol>
-                                            <li>First, search your syllabus documents</li>
-                                            <li>Find the relevant parts</li>
-                                            <li>Then write an answer using that information</li>
-                                        </ol>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="tooltip-box">
-                                <strong>🔤 Breaking down the name:</strong>
-                                <p><strong>Retrieval</strong> = Finding/fetching information</p>
-                                <p><strong>Augmented</strong> = Made better/enhanced</p>
-                                <p><strong>Generation</strong> = Creating the answer</p>
-                            </div>
+                        <div class="partner-card">
+                            <h3>🌐 Globeminds Technology Pvt. Ltd.</h3>
+                            <p>Leading software development company delivering innovative solutions since 2013</p>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </header>
 
-            <!-- INTERNALS TAB -->
-            <section id="internals" class="tab-content">
-                <h1>How AI Learns (Training)</h1>
-                <p class="section-intro">Let's see what happens inside an AI when it learns. We'll use a simple step-by-step visual!</p>
+        <!-- Important Dates -->
+        <section class="dates-section" id="dates">
+            <div class="section-header reveal">
+                <span class="section-label">Timeline</span>
+                <h2 class="section-title">Important Dates</h2>
+                <p class="section-description">Mark your calendar for these crucial milestones</p>
+            </div>
+            <div class="dates-grid">
+                <div class="date-card reveal">
+                    <div class="date-icon">📝</div>
+                    <h3>Submission Deadline</h3>
+                    <div class="date">Dec 31, 2025</div>
+                </div>
+                <div class="date-card reveal">
+                    <div class="date-icon">✅</div>
+                    <h3>Acceptance Notification</h3>
+                    <div class="date">Jan 5, 2026</div>
+                </div>
+                <div class="date-card reveal">
+                    <div class="date-icon">🎫</div>
+                    <h3>Registration Deadline</h3>
+                    <div class="date">Jan 10, 2026</div>
+                </div>
+                <div class="date-card reveal">
+                    <div class="date-icon">🎉</div>
+                    <h3>Conference Date</h3>
+                    <div class="date">Jan 16-17, 2026</div>
+                </div>
+            </div>
+        </section>
 
-                <div class="training-explanation">
-                    <h3>Understanding Training in Simple Words</h3>
-                    <div class="explanation-points">
-                        <div class="point">
-                            <span class="point-number">1</span>
-                            <p><strong>AI sees lots of examples</strong> - like thousands of sentences, pictures, or numbers.</p>
-                        </div>
-                        <div class="point">
-                            <span class="point-number">2</span>
-                            <p><strong>AI finds patterns</strong> - it notices what things have in common.</p>
-                        </div>
-                        <div class="point">
-                            <span class="point-number">3</span>
-                            <p><strong>AI stores these patterns as numbers</strong> - not as full sentences or pictures, but as mathematical patterns inside the model.</p>
-                        </div>
-                    </div>
+        <!-- About Section -->
+        <section class="section" id="about">
+            <div class="section-header reveal">
+                <span class="section-label">About</span>
+                <h2 class="section-title">Conference Overview</h2>
+                <p class="section-description">A premier platform for interdisciplinary research and innovation</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card reveal">
+                    <div class="about-card-icon">🏛️</div>
+                    <h3>About the Institution</h3>
+                    <p>Keystone School of Engineering (KSE) was established in 2012 and is affiliated to Savitribai Phule Pune University (SPPU). It offers UG programmes in Computer Engineering, Mechanical Engineering, AI & DS, and ENTC. Approved by AICTE, New Delhi and recognised by DTE Maharashtra.</p>
+                </div>
+                <div class="about-card reveal">
+                    <div class="about-card-icon">💼</div>
+                    <h3>About the Industry Partner</h3>
+                    <p>Globeminds Technology is a software development company based in Pune (est. 2013). We deliver product and service-based applications with a strong focus on quality, efficiency, innovation, and customer satisfaction.</p>
+                </div>
+                <div class="about-card reveal">
+                    <div class="about-card-icon">🌍</div>
+                    <h3>About the Conference</h3>
+                    <p>INMEC 2026 provides a global platform for academicians, researchers, industry professionals, and students to present innovative research and exchange knowledge across Mechanical, Electronics, and Computer Engineering.</p>
+                </div>
+            </div>
+        </section>
 
-                    <div class="did-you-know">
-                        <strong>💡 Important to understand:</strong>
-                        <p>The AI doesn't store text like a notebook. It learns <em>patterns</em> and stores them as numbers. It's like how you don't memorize every cat you've seen, but you learned the <em>pattern</em> of what makes something a cat!</p>
-                    </div>
+        <!-- Scope & Objectives -->
+        <section class="section">
+            <div class="section-header reveal">
+                <span class="section-label">Mission</span>
+                <h2 class="section-title">Scope & Objectives</h2>
+                <p class="section-description">INMEC 2026 facilitates the exchange of knowledge, experiences, and research findings across interdisciplinary domains</p>
+            </div>
+            <ul class="objectives-list">
+                <li class="reveal">Engage in discussions with peers from diverse regions and build global research networks</li>
+                <li class="reveal">Build professional networks and collaborative opportunities across academia and industry</li>
+                <li class="reveal">Foster research–industry partnerships for impactful projects and real-world applications</li>
+                <li class="reveal">Contribute to the global knowledge base in Mechanical, Electronics, and Computer Engineering</li>
+            </ul>
+        </section>
+
+        <!-- Conference Tracks -->
+        <section class="section" id="tracks">
+            <div class="section-header reveal">
+                <span class="section-label">Research Areas</span>
+                <h2 class="section-title">Conference Tracks</h2>
+                <p class="section-description">Explore cutting-edge research across multiple engineering disciplines</p>
+            </div>
+            <div class="tracks-grid">
+                <div class="track-card reveal">
+                    <div class="track-icon">💻</div>
+                    <h4>Computer Science & Engineering</h4>
+                    <ul>
+                        <li>Computer Networks & Data Communications</li>
+                        <li>Data Encryption & Cryptography</li>
+                        <li>Database Systems & Data Mining</li>
+                        <li>Artificial Intelligence & Machine Learning</li>
+                        <li>Mobile Computing & Ubiquitous Systems</li>
+                    </ul>
                 </div>
 
-                <!-- Interactive Training Simulation -->
-                <div class="simulation-container">
-                    <h3>Interactive Training Simulation</h3>
-                    <p>Click "Start Training" to see how AI learns step by step!</p>
-
-                    <div class="simulation-area">
-                        <div class="sim-step" id="sim-step-1">
-                            <h4>Step 1: Input Data</h4>
-                            <div class="data-examples">
-                                <div class="data-item">"The cat sat on the mat"</div>
-                                <div class="data-item">"The dog ran in the park"</div>
-                                <div class="data-item">"Birds fly in the sky"</div>
-                                <div class="data-item">"Fish swim in water"</div>
-                                <div class="data-item">"The cat played with yarn"</div>
-                            </div>
-                            <p class="step-explain">These are example sentences the AI will learn from.</p>
-                        </div>
-
-                        <div class="sim-step hidden" id="sim-step-2">
-                            <h4>Step 2: Finding Patterns</h4>
-                            <div class="pattern-viz">
-                                <svg class="neural-viz" viewBox="0 0 300 150">
-                                    <!-- Input nodes -->
-                                    <circle cx="30" cy="30" r="10" class="node input-node" />
-                                    <circle cx="30" cy="75" r="10" class="node input-node" />
-                                    <circle cx="30" cy="120" r="10" class="node input-node" />
-
-                                    <!-- Hidden nodes -->
-                                    <circle cx="150" cy="50" r="12" class="node hidden-node" />
-                                    <circle cx="150" cy="100" r="12" class="node hidden-node" />
-
-                                    <!-- Output nodes -->
-                                    <circle cx="270" cy="75" r="10" class="node output-node" />
-
-                                    <!-- Connections -->
-                                    <line x1="40" y1="30" x2="138" y2="50" class="connection" />
-                                    <line x1="40" y1="75" x2="138" y2="50" class="connection" />
-                                    <line x1="40" y1="120" x2="138" y2="100" class="connection" />
-                                    <line x1="40" y1="75" x2="138" y2="100" class="connection" />
-                                    <line x1="162" y1="50" x2="260" y2="75" class="connection" />
-                                    <line x1="162" y1="100" x2="260" y2="75" class="connection" />
-                                </svg>
-                                <div class="pattern-labels">
-                                    <span>Words</span>
-                                    <span>Patterns</span>
-                                    <span>Knowledge</span>
-                                </div>
-                            </div>
-                            <p class="step-explain">The AI connects words and finds which words often appear together. The lines get stronger for common patterns!</p>
-                        </div>
-
-                        <div class="sim-step hidden" id="sim-step-3">
-                            <h4>Step 3: Trained Model</h4>
-                            <div class="trained-model-viz">
-                                <div class="model-box">
-                                    <span class="model-icon">🧠</span>
-                                    <h4>Trained AI Model</h4>
-                                    <div class="learned-patterns">
-                                        <div class="pattern-item">✓ "The" often starts sentences</div>
-                                        <div class="pattern-item">✓ Animals do actions</div>
-                                        <div class="pattern-item">✓ "cat" relates to "mat", "yarn"</div>
-                                        <div class="pattern-item">✓ "in" comes before places</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="step-explain">Now the AI has learned patterns! These are stored as numbers inside the model, ready to help generate new text.</p>
-                        </div>
-                    </div>
-
-                    <div class="simulation-controls">
-                        <button id="start-training-btn" class="btn primary-btn" onclick="startTraining()">▶ Start Training</button>
-                        <button id="reset-training-btn" class="btn secondary-btn" onclick="resetTraining()">↺ Reset</button>
-                        <div class="progress-indicator">
-                            <span class="progress-dot active" data-step="1"></span>
-                            <span class="progress-dot" data-step="2"></span>
-                            <span class="progress-dot" data-step="3"></span>
-                        </div>
-                    </div>
+                <div class="track-card reveal">
+                    <div class="track-icon">🚀</div>
+                    <h4>Emerging Technologies</h4>
+                    <ul>
+                        <li>Big Data Infrastructure & Analytics</li>
+                        <li>Cloud Computing & Virtualization</li>
+                        <li>Intelligent Systems & Smart Applications</li>
+                        <li>Control Theory and Applications</li>
+                    </ul>
                 </div>
 
-                <div class="key-takeaway">
-                    <h3>Key Takeaway</h3>
-                    <p>Training is like teaching by showing many examples. The AI learns the <strong>patterns</strong> in the data, not by memorizing everything, but by understanding what usually goes together!</p>
-                </div>
-            </section>
-
-            <!-- OUTPUT TAB -->
-            <section id="output" class="tab-content">
-                <h1>How AI Creates Answers (Inference)</h1>
-                <p class="section-intro">After training, AI can answer questions. This is called "inference" - let's see how it works!</p>
-
-                <div class="inference-explanation">
-                    <h3>What Happens When You Ask AI a Question?</h3>
-                    <div class="explanation-points">
-                        <div class="point">
-                            <span class="point-number">1</span>
-                            <p><strong>You give input</strong> - your question or prompt goes into the AI.</p>
-                        </div>
-                        <div class="point">
-                            <span class="point-number">2</span>
-                            <p><strong>AI uses its learned patterns</strong> - it thinks about what usually comes next based on its training.</p>
-                        </div>
-                        <div class="point">
-                            <span class="point-number">3</span>
-                            <p><strong>AI predicts the next word</strong> - one word at a time, building a full answer!</p>
-                        </div>
-                    </div>
+                <div class="track-card reveal">
+                    <div class="track-icon">📡</div>
+                    <h4>Communication & IT</h4>
+                    <ul>
+                        <li>Communication Engineering & Systems</li>
+                        <li>Next-Generation Network Architectures</li>
+                        <li>Secure Data Communication Protocols</li>
+                    </ul>
                 </div>
 
-                <!-- Next Word Prediction Visual -->
-                <div class="prediction-visual">
-                    <h3>Next-Word Prediction Explained</h3>
-                    <div class="prediction-demo">
-                        <p class="prediction-prompt">If you type: <strong>"The sun is"</strong></p>
-                        <div class="prediction-flow">
-                            <div class="word-box existing">"The"</div>
-                            <div class="word-box existing">"sun"</div>
-                            <div class="word-box existing">"is"</div>
-                            <div class="word-box predicted" id="predicted-word">?</div>
-                        </div>
-                        <p class="prediction-explain">AI thinks: "What word usually comes after 'The sun is'?"</p>
-                        <p class="prediction-explain">Based on patterns, it might predict: <strong>"shining"</strong>, <strong>"bright"</strong>, or <strong>"hot"</strong></p>
-                    </div>
+                <div class="track-card reveal">
+                    <div class="track-icon">🏥</div>
+                    <h4>Health & Medical Sciences</h4>
+                    <ul>
+                        <li>Biomedical Signal & Image Processing</li>
+                        <li>Telemedicine & Remote Patient Monitoring</li>
+                        <li>Artificial Intelligence in Healthcare</li>
+                        <li>Wearable Health Devices & IoT in Medicine</li>
+                    </ul>
                 </div>
 
-                <!-- Interactive Demo -->
-                <div class="interactive-demo">
-                    <h3>Try It Yourself!</h3>
-                    <p>Type a short phrase and see how AI would build an answer word by word.</p>
-
-                    <div class="demo-input-area">
-                        <input type="text" id="user-input" placeholder="Type something like 'Explain gravity' or 'What is water'" maxlength="100">
-                        <button class="btn primary-btn" onclick="generateResponse()">Generate Response</button>
-                    </div>
-
-                    <div class="demo-output-area" id="output-display">
-                        <div class="output-flow" id="output-flow">
-                            <div class="flow-stage">
-                                <span class="stage-icon">📝</span>
-                                <span class="stage-label">Your Input</span>
-                                <div class="stage-content" id="stage-input">Waiting for your input...</div>
-                            </div>
-                            <div class="flow-arrow-down">↓</div>
-                            <div class="flow-stage">
-                                <span class="stage-icon">🧠</span>
-                                <span class="stage-label">AI Thinking...</span>
-                                <div class="stage-content" id="stage-thinking">Looking at learned patterns...</div>
-                            </div>
-                            <div class="flow-arrow-down">↓</div>
-                            <div class="flow-stage">
-                                <span class="stage-icon">✨</span>
-                                <span class="stage-label">Generated Output</span>
-                                <div class="stage-content" id="stage-output">
-                                    <span class="typing-text" id="typing-output"></span>
-                                    <span class="cursor">|</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="word-by-word-demo hidden" id="word-demo">
-                        <h4>Word-by-Word Generation:</h4>
-                        <div class="word-sequence" id="word-sequence"></div>
-                    </div>
+                <div class="track-card reveal">
+                    <div class="track-icon">📊</div>
+                    <h4>Business & Management</h4>
+                    <ul>
+                        <li>Business Analytics & Data-Driven Decision Making</li>
+                        <li>Financial Technology (FinTech) Innovations</li>
+                        <li>Supply Chain Management & Logistics</li>
+                    </ul>
                 </div>
 
-                <div class="did-you-know">
-                    <strong>💡 Did you know?</strong>
-                    <p>Large Language Models like ChatGPT predict one word (or token) at a time, very fast! They might generate hundreds of words per second, each based on what came before.</p>
-                </div>
-            </section>
-
-            <!-- APPLICATIONS TAB -->
-            <section id="applications" class="tab-content">
-                <h1>AI in Your Field of Study</h1>
-                <p class="section-intro">AI is being used in Physics, Mathematics, and Biology in exciting ways. Let's explore!</p>
-
-                <div class="app-tabs">
-                    <button class="app-tab-btn active" onclick="showAppSection('physics')">🔭 Physics</button>
-                    <button class="app-tab-btn" onclick="showAppSection('mathematics')">📐 Mathematics</button>
-                    <button class="app-tab-btn" onclick="showAppSection('biology')">🧬 Biology</button>
+                <div class="track-card reveal">
+                    <div class="track-icon">⚡</div>
+                    <h4>Electronics & Telecom</h4>
+                    <ul>
+                        <li>Communication Systems and Networks</li>
+                        <li>Signal Processing & Multimedia</li>
+                        <li>Wireless and Mobile Networks</li>
+                        <li>Embedded Systems and IoT</li>
+                        <li>VLSI Design and Microelectronics</li>
+                        <li>5G/6G Technologies and Beyond</li>
+                    </ul>
                 </div>
 
-                <!-- Physics Section -->
-                <div class="app-section active" id="app-physics">
-                    <h2>🔭 AI in Physics</h2>
+                <div class="track-card reveal">
+                    <div class="track-icon">⚙️</div>
+                    <h4>Mechanical Engineering</h4>
+                    <ul>
+                        <li>Thermodynamics and Heat Transfer</li>
+                        <li>Fluid Mechanics and Hydraulics</li>
+                        <li>Robotics and Automation</li>
+                        <li>Manufacturing Processes & Materials</li>
+                        <li>Computational Mechanics & Simulations</li>
+                        <li>Mechatronics and Control Systems</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-                    <div class="use-cases">
-                        <h3>How AI Helps Physics Students & Researchers:</h3>
-                        <ul class="use-case-list">
-                            <li>
-                                <span class="use-icon">📊</span>
-                                <strong>Analyzing experiment data</strong> - AI can quickly find patterns in large datasets from physics experiments.
-                            </li>
-                            <li>
-                                <span class="use-icon">🖥️</span>
-                                <strong>Running simulations</strong> - AI helps simulate complex physical systems faster than traditional methods.
-                            </li>
-                            <li>
-                                <span class="use-icon">📉</span>
-                                <strong>Reducing errors</strong> - AI can identify and correct measurement errors in lab data.
-                            </li>
-                            <li>
-                                <span class="use-icon">📈</span>
-                                <strong>Visualizing graphs</strong> - AI tools can create beautiful plots and help interpret results.
-                            </li>
-                            <li>
-                                <span class="use-icon">🔍</span>
-                                <strong>Discovering new physics</strong> - AI has helped find new particles and patterns in particle physics data!
-                            </li>
-                        </ul>
+        <!-- Organizing Committee -->
+        <section class="section committee-section" id="committee">
+            <div class="section-header reveal">
+                <span class="section-label" style="background: rgba(255,255,255,0.2);">Leadership</span>
+                <h2 class="section-title">Organizing Committee</h2>
+                <p class="section-description">Distinguished leaders driving academic excellence</p>
+            </div>
+
+            <div class="committee-category reveal">
+                <h3>Chief Patron</h3>
+                <div class="committee-grid">
+                    <div class="committee-member">
+                        <strong>Prof. Yashodhan Soman</strong>
+                        <span>Founder Director, Keystone School of Engineering, Pune</span>
                     </div>
-
-                    <div class="story-box">
-                        <h4>📖 Student Story</h4>
-                        <p>"Priya is a physics student doing her final year project on pendulum motion. She collected lots of data but making graphs took hours. She used an AI tool to quickly plot all her graphs, fit curves to her data, and even find small errors she missed. Her project was completed in half the time!"</p>
+                    <div class="committee-member">
+                        <strong>Mr. Pravin Jadhav</strong>
+                        <span>Managing Director, Globeminds Technology Pvt. Ltd.</span>
                     </div>
                 </div>
+            </div>
 
-                <!-- Mathematics Section -->
-                <div class="app-section" id="app-mathematics">
-                    <h2>📐 AI in Mathematics</h2>
-
-                    <div class="use-cases">
-                        <h3>How AI Helps Mathematics Students:</h3>
-                        <ul class="use-case-list">
-                            <li>
-                                <span class="use-icon">✏️</span>
-                                <strong>Solving problems step-by-step</strong> - AI can show how to solve equations, integrals, and more with explanations.
-                            </li>
-                            <li>
-                                <span class="use-icon">✅</span>
-                                <strong>Checking your answers</strong> - Quickly verify if your solution is correct.
-                            </li>
-                            <li>
-                                <span class="use-icon">📊</span>
-                                <strong>Visualizing functions</strong> - AI can draw 2D and 3D graphs of mathematical functions.
-                            </li>
-                            <li>
-                                <span class="use-icon">📝</span>
-                                <strong>Generating practice questions</strong> - AI can create unlimited practice problems for any topic!
-                            </li>
-                            <li>
-                                <span class="use-icon">🧮</span>
-                                <strong>Proving theorems</strong> - Advanced AI is even helping mathematicians prove new theorems!
-                            </li>
-                        </ul>
+            <div class="committee-category reveal">
+                <h3>Conference Chairs</h3>
+                <div class="committee-grid">
+                    <div class="committee-member">
+                        <strong>Dr. Parikshit N. Mahalle</strong>
+                        <span>Vishwakarma Institute of Technology, Pune</span>
                     </div>
-
-                    <div class="story-box">
-                        <h4>📖 Student Story</h4>
-                        <p>"Rahul was struggling with differential equations. He asked an AI chatbot to explain the concept like he was 10 years old. The AI gave him a simple water-flow analogy that made everything click! Then it generated 20 practice problems from easy to hard, and checked all his answers instantly."</p>
+                    <div class="committee-member">
+                        <strong>Dr. Emre Altas</strong>
+                        <span>Bartın University, Bartın, Turkey</span>
                     </div>
-
-                    <div class="did-you-know">
-                        <strong>💡 Did you know?</strong>
-                        <p>AI tools like Wolfram Alpha and ChatGPT can solve most undergraduate math problems! But remember - use them to learn, not just to copy answers.</p>
+                    <div class="committee-member">
+                        <strong>Dr. Archana P. Kale</strong>
+                        <span>MES Wadia CoE, Pune</span>
                     </div>
                 </div>
+            </div>
 
-                <!-- Biology Section -->
-                <div class="app-section" id="app-biology">
-                    <h2>🧬 AI in Biology</h2>
-
-                    <div class="use-cases">
-                        <h3>How AI is Transforming Biology:</h3>
-                        <ul class="use-case-list">
-                            <li>
-                                <span class="use-icon">🧬</span>
-                                <strong>Predicting protein shapes</strong> - AI can predict how proteins fold, which is crucial for understanding diseases.
-                            </li>
-                            <li>
-                                <span class="use-icon">💊</span>
-                                <strong>Drug discovery</strong> - AI helps find new medicines faster by predicting which molecules might work.
-                            </li>
-                            <li>
-                                <span class="use-icon">🔬</span>
-                                <strong>Analyzing medical images</strong> - AI can detect diseases in X-rays, MRIs, and microscope images.
-                            </li>
-                            <li>
-                                <span class="use-icon">🦠</span>
-                                <strong>Classifying cells</strong> - AI can identify different cell types automatically from images.
-                            </li>
-                            <li>
-                                <span class="use-icon">🧪</span>
-                                <strong>Gene analysis</strong> - AI helps analyze DNA sequences and find genetic patterns.
-                            </li>
-                        </ul>
+            <div class="committee-category reveal">
+                <h3>International Scientific Advisory</h3>
+                <div class="committee-grid">
+                    <div class="committee-member">
+                        <strong>Dr. Yung Yu</strong>
+                        <span>Scientist, Taylor Hobson Inc., UK</span>
                     </div>
-
-                    <div class="story-box">
-                        <h4>📖 Student Story</h4>
-                        <p>"Sneha is a biology student interested in proteins. She heard about AlphaFold - an AI that can predict how proteins fold into 3D shapes. Using AlphaFold's database, she could see the predicted structure of a protein she was studying for her assignment, without doing months of lab work!"</p>
+                    <div class="committee-member">
+                        <strong>Dr. Hayden Kingsley Taylor</strong>
+                        <span>NTU, Singapore</span>
                     </div>
-
-                    <div class="famous-ai-box">
-                        <h4>🏆 Famous AI in Biology: AlphaFold</h4>
-                        <p><strong>What is it?</strong> AlphaFold is an AI made by Google DeepMind.</p>
-                        <p><strong>What does it do?</strong> It predicts the 3D shape of proteins from their amino acid sequence.</p>
-                        <p><strong>Why is this important?</strong> Knowing protein shapes helps us understand diseases and create new medicines. This used to take years in a lab - AlphaFold can do it in minutes!</p>
-                        <p><strong>Impact:</strong> AlphaFold has predicted structures for almost all known proteins - over 200 million! Scientists worldwide use this for free.</p>
+                    <div class="committee-member">
+                        <strong>Dr. Fatih Mehmet Botsali</strong>
+                        <span>Selcuk University, Turkey</span>
+                    </div>
+                    <div class="committee-member">
+                        <strong>Dr. Mohd Salman Abu Mansor</strong>
+                        <span>Universiti Sains Malaysia</span>
+                    </div>
+                    <div class="committee-member">
+                        <strong>Dr. Goh Yang Miang</strong>
+                        <span>NUS, Singapore</span>
+                    </div>
+                    <div class="committee-member">
+                        <strong>Dr. Geert Jan Bex</strong>
+                        <span>Hasselt University, Belgium</span>
+                    </div>
+                    <div class="committee-member">
+                        <strong>Dr. Nirmal Mandal</strong>
+                        <span>Central Queensland University, Australia</span>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- CHATBOT TAB -->
-            <section id="chatbot" class="tab-content">
-                <h1>How AI Chatbots Work</h1>
-                <p class="section-intro">You've probably used ChatGPT or similar chatbots. Let's understand what happens behind the scenes!</p>
-
-                <!-- Flow Diagram -->
-                <div class="chatbot-flow-section">
-                    <h3>Inside a Chatbot: Step by Step</h3>
-                    <div class="chatbot-flow-diagram">
-                        <div class="chatbot-step">
-                            <div class="step-circle">1</div>
-                            <div class="step-icon">👤</div>
-                            <h4>You Type a Question</h4>
-                            <p>You write your question or request in the chat box.</p>
-                        </div>
-                        <div class="chatbot-arrow">→</div>
-                        <div class="chatbot-step">
-                            <div class="step-circle">2</div>
-                            <div class="step-icon">📖</div>
-                            <h4>Chatbot Reads & Understands</h4>
-                            <p>The chatbot converts your text into numbers it can process.</p>
-                        </div>
-                        <div class="chatbot-arrow">→</div>
-                        <div class="chatbot-step">
-                            <div class="step-circle">3</div>
-                            <div class="step-icon">🧠</div>
-                            <h4>AI Model Thinks</h4>
-                            <p>The AI uses patterns from training to figure out a good response.</p>
-                        </div>
-                        <div class="chatbot-arrow">→</div>
-                        <div class="chatbot-step">
-                            <div class="step-circle">4</div>
-                            <div class="step-icon">💬</div>
-                            <h4>Chatbot Sends Answer</h4>
-                            <p>The response is converted back to text and shown to you!</p>
-                        </div>
+        <!-- Paper Submission -->
+        <section class="submission-section" id="submit">
+            <div class="section-header reveal">
+                <h2 class="section-title">Paper Submission & Publication</h2>
+                <p class="section-description" style="color: rgba(255,255,255,0.9);">Share your research with the global academic community</p>
+            </div>
+            <div class="submission-box reveal">
+                <h3>Publication Opportunities</h3>
+                <div class="submission-features">
+                    <div class="submission-feature">
+                        <div class="submission-feature-icon">📚</div>
+                        <h4>Proceedings</h4>
+                        <p>Published with ISBN/ISSN</p>
+                    </div>
+                    <div class="submission-feature">
+                        <div class="submission-feature-icon">🌟</div>
+                        <h4>Scopus/WoS</h4>
+                        <p>Selected papers indexed</p>
+                    </div>
+                    <div class="submission-feature">
+                        <div class="submission-feature-icon">✍️</div>
+                        <h4>Peer Review</h4>
+                        <p>Rigorous evaluation process</p>
                     </div>
                 </div>
+                <p style="margin-top: 30px; line-height: 1.8;">Authors are invited to submit original, unpublished research contributions in .doc or .docx format. All accepted, registered and presented articles will be published in the official Conference Proceedings.</p>
+                <a href="https://forms.gle/ZxUeFxoWhqcVgmKQ8" class="cta-button" target="_blank">
+                    Submit Your Paper
+                    <span>→</span>
+                </a>
+            </div>
+        </section>
 
-                <!-- Detailed Explanation -->
-                <div class="chatbot-details">
-                    <h3>Let's Understand Each Step Better</h3>
-
-                    <div class="detail-card">
-                        <h4>Step 1: You Type a Question</h4>
-                        <p>This is your "input" or "prompt". For example: "What is photosynthesis?"</p>
-                    </div>
-
-                    <div class="detail-card">
-                        <h4>Step 2: Chatbot Reads & Understands</h4>
-                        <p>Your words are broken into small pieces called "tokens" (words or parts of words). Each token is converted to numbers because computers only understand numbers!</p>
-                        <div class="simple-example">
-                            <code>"What is photosynthesis?"</code> → <code>[What] [is] [photo] [synthesis] [?]</code> → <code>[numbers]</code>
-                        </div>
-                    </div>
-
-                    <div class="detail-card">
-                        <h4>Step 3: AI Model Thinks</h4>
-                        <p>The AI model looks at your question and all the patterns it learned during training. It asks itself: "Based on everything I learned, what would be a helpful answer?"</p>
-                        <p>Then it predicts the answer one word at a time, very fast!</p>
-                    </div>
-
-                    <div class="detail-card">
-                        <h4>Step 4: Chatbot Sends Answer</h4>
-                        <p>The generated text is sent back to you through the chat interface. You see the complete answer on your screen!</p>
-                    </div>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>INMEC 2026</h4>
+                    <p>International Conference on Interdisciplinary Advances in Mechanical, Electronics, and Computer Engineering</p>
                 </div>
-
-                <!-- Mini Chatbot Demo -->
-                <div class="chatbot-demo-section">
-                    <h3>Try the Demo Chatbot</h3>
-                    <p>This is a simple demo to show the idea. Type a question and see a sample response!</p>
-
-                    <div class="chatbot-demo">
-                        <div class="chat-messages" id="chat-messages">
-                            <div class="chat-message bot">
-                                <span class="message-icon">🤖</span>
-                                <div class="message-content">Hello! I'm a demo chatbot. Ask me something simple like "What is AI?" or "Tell me about gravity".</div>
-                            </div>
-                        </div>
-                        <div class="chat-input-area">
-                            <input type="text" id="chat-input" placeholder="Type your question here..." onkeypress="handleChatKeypress(event)">
-                            <button class="btn primary-btn" onclick="sendChatMessage()">Send</button>
-                        </div>
-                    </div>
-
-                    <div class="demo-note">
-                        <strong>Note:</strong> This is a demo with pre-made responses. Real chatbots like ChatGPT use actual AI models to generate unique answers!
-                    </div>
+                <div class="footer-section">
+                    <h4>Venue</h4>
+                    <p>Keystone School of Engineering<br>
+                    Pune, Maharashtra, India</p>
                 </div>
-
-                <div class="did-you-know">
-                    <strong>💡 Did you know?</strong>
-                    <p>Modern chatbots like ChatGPT have been trained on billions of words from the internet, books, and more. But they don't remember your previous conversations unless specifically designed to!</p>
+                <div class="footer-section">
+                    <h4>Conference Dates</h4>
+                    <p>January 16-17, 2026</p>
                 </div>
-            </section>
-        </main>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>For inquiries, please visit our submission portal</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 INMEC. All rights reserved. | Designed with excellence for academic innovation</p>
+            </div>
+        </footer>
     </div>
 
-    <script src="app.js"></script>
+    <script>
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('scrollProgress').style.width = scrolled + '%';
+        });
+
+        // Scroll Reveal Animation
+        const reveals = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            reveals.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Initial check
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
