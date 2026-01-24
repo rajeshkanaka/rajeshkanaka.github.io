@@ -3,301 +3,813 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rajesh Pandhare | AI & ML Expert | Tech Lead</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Rajesh Pandhare - AI/ML Tech Lead & Software Architect</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+        
+        :root {
+            /* Premium Professional Color Palette */
+            --primary-navy: #0A192F;
+            --primary-slate: #112240;
+            --accent-teal: #64FFDA;
+            --accent-blue: #57CBFF;
+            --accent-purple: #C792EA;
+            --text-primary: #CCD6F6;
+            --text-secondary: #8892B0;
+            --text-tertiary: #495670;
+            --bg-dark: #0A192F;
+            --bg-light: #112240;
+            --bg-lighter: #1E2A47;
+            --highlight: #233554;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-accent: linear-gradient(135deg, #64FFDA 0%, #57CBFF 100%);
+            --gradient-warm: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+            --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
+            --shadow-xl: 0 16px 32px rgba(0, 0, 0, 0.25);
+            --shadow-glow: 0 0 20px rgba(100, 255, 218, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Poppins', sans-serif;
-            color: #333;
-            background-color: #f8f9fa;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-secondary);
+            line-height: 1.7;
+            overflow-x: hidden;
         }
-        .bg-tech-pattern {
-            background-image: 
-                radial-gradient(circle at 25px 25px, rgba(100, 149, 237, 0.15) 2%, transparent 0%), 
-                radial-gradient(circle at 75px 75px, rgba(100, 149, 237, 0.15) 2%, transparent 0%);
-            background-size: 100px 100px;
-        }
-        .nav-link {
-            position: relative;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: #4169E1;
-            transition: width 0.3s;
-        }
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        .section-heading {
-            position: relative;
-            padding-bottom: 15px;
-        }
-        .section-heading::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background-color: #4169E1;
-        }
-        .experience-card {
-            position: relative;
-            border-left: 2px solid #4169E1;
-            padding-left: 20px;
-            margin-bottom: 50px; /* Increased space between cards */
-            padding-bottom: 10px; /* Added padding at bottom */
-        }
-        .experience-card::before {
-            content: '';
-            position: absolute;
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            background-color: #4169E1;
-            left: -8.5px;
-            top: 5px;
-        }
-        .experience-date {
-            position: absolute;
-            left: -120px; /* Moved further left to avoid overlap */
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
             top: 0;
-            width: 100px; /* Fixed width for date container */
-            text-align: right;
-            font-size: 0.875rem;
-            color: #6b7280;
-        }
-        .skill-bar {
-            height: 8px;
-            border-radius: 4px;
-            background-color: #e9ecef;
-            margin-bottom: 25px;
-        }
-        .skill-progress {
-            height: 100%;
-            border-radius: 4px;
-            background-color: #4169E1;
-            position: relative;
-        }
-        .project-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        .wave-animation {
-            position: absolute;
-            bottom: 0;
             left: 0;
             width: 100%;
-            height: 100px;
-            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg"><path fill="%234169E1" fill-opacity="0.2" d="M0,192L48,170.7C96,149,192,107,288,106.7C384,107,480,149,576,154.7C672,160,768,128,864,122.7C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
-            background-size: cover;
-            background-repeat: no-repeat;
+            height: 100%;
             z-index: -1;
+            background: var(--bg-dark);
         }
-        .publication-card {
-            transition: transform 0.3s ease;
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(100, 255, 218, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(87, 203, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(199, 146, 234, 0.03) 0%, transparent 50%);
+            animation: bgPulse 15s ease-in-out infinite;
         }
-        .publication-card:hover {
-            transform: translateX(5px);
+
+        @keyframes bgPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
         }
-        .tech-badge {
-            display: inline-block;
-            background-color: rgba(65, 105, 225, 0.1);
-            color: #4169E1;
-            border-radius: 4px;
-            padding: 4px 10px;
-            margin: 3px;
-            font-size: 0.8rem;
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 25, 47, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+            box-shadow: var(--shadow-md);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-teal);
+            text-decoration: none;
             transition: all 0.3s ease;
         }
-        .tech-badge:hover {
-            background-color: #4169E1;
-            color: white;
+
+        .logo:hover {
+            text-shadow: var(--shadow-glow);
         }
-        .ai-gradient-text {
-            background: linear-gradient(90deg, #4169E1, #6495ED);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            color: transparent;
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::before {
+            content: '< ';
+            color: var(--accent-teal);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: ' />';
+            color: var(--accent-teal);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-teal);
+        }
+
+        .nav-links a:hover::before,
+        .nav-links a:hover::after {
+            opacity: 1;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero-greeting {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent-teal);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            line-height: 1.1;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 650px;
+            line-height: 1.8;
+            margin-bottom: 50px;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent-teal);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .btn-primary {
+            background: transparent;
+            color: var(--accent-teal);
+        }
+
+        .btn-primary:hover {
+            background: rgba(100, 255, 218, 0.1);
+            box-shadow: var(--shadow-glow);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-secondary);
+            border-color: var(--text-secondary);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(136, 146, 176, 0.1);
+            color: var(--text-primary);
+            transform: translateY(-2px);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 120px 0;
+            position: relative;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .section-number {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent-teal);
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            white-space: nowrap;
+        }
+
+        .section-line {
+            height: 1px;
+            background: var(--highlight);
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-text strong {
+            color: var(--accent-teal);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .skill-category {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--highlight);
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            border-color: var(--accent-teal);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .skill-category h4 {
+            color: var(--text-primary);
+            font-size: 1rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .skill-category p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .profile-card {
+            background: var(--bg-light);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid var(--highlight);
+            position: sticky;
+            top: 120px;
+        }
+
+        .profile-card h3 {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 12px 0;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            border-bottom: 1px solid var(--highlight);
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+
+        .contact-item span {
+            color: var(--accent-teal);
+            font-weight: 600;
+        }
+
+        .contact-item a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent-teal);
+        }
+
+        /* Experience Section */
+        .experience-list {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+        }
+
+        .experience-item {
+            background: var(--bg-light);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid var(--highlight);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-accent);
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 0.3s ease;
+        }
+
+        .experience-item:hover {
+            border-color: var(--accent-teal);
+            transform: translateX(5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .experience-item:hover::before {
+            transform: scaleY(1);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .experience-title h3 {
+            color: var(--text-primary);
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .experience-role {
+            color: var(--accent-teal);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .experience-period {
+            color: var(--text-secondary);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            text-align: right;
+        }
+
+        .experience-description {
+            margin-bottom: 20px;
+        }
+
+        .experience-description p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .experience-highlights {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .highlight-item {
+            display: flex;
+            gap: 15px;
+            align-items: start;
+        }
+
+        .highlight-item::before {
+            content: '▹';
+            color: var(--accent-teal);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .highlight-item p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .tech-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            padding: 6px 12px;
+            background: rgba(100, 255, 218, 0.1);
+            color: var(--accent-teal);
+            border-radius: 4px;
+            border: 1px solid rgba(100, 255, 218, 0.2);
+        }
+
+        /* Education Section */
+        .education-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .education-item {
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--highlight);
+            transition: all 0.3s ease;
+        }
+
+        .education-item:hover {
+            border-color: var(--accent-teal);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .education-degree {
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .education-school {
+            color: var(--accent-teal);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .education-year {
+            color: var(--text-secondary);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        /* Skills Section */
+        .skills-section {
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: 50px;
+            border: 1px solid var(--highlight);
+        }
+
+        .skills-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-group {
+            padding: 25px;
+            background: var(--bg-dark);
+            border-radius: 8px;
+            border: 1px solid var(--highlight);
+            transition: all 0.3s ease;
+        }
+
+        .skill-group:hover {
+            border-color: var(--accent-teal);
+            transform: translateY(-3px);
+        }
+
+        .skill-group h4 {
+            color: var(--accent-teal);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-item {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            padding: 6px 12px;
+            background: rgba(100, 255, 218, 0.05);
+            color: var(--text-secondary);
+            border-radius: 4px;
+            border: 1px solid var(--highlight);
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            background: rgba(100, 255, 218, 0.1);
+            color: var(--accent-teal);
+            border-color: var(--accent-teal);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-content h2 {
+            font-size: 3rem;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        .contact-content p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--highlight);
+        }
+
+        footer p {
+            color: var(--text-tertiary);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--accent-teal);
+            text-decoration: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-card {
+                position: static;
+            }
+
+            .hero h1 {
+                font-size: 4rem;
+            }
+
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .experience-header {
+                flex-direction: column;
+            }
+
+            .experience-period {
+                text-align: left;
+            }
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
+    <div class="bg-animation"></div>
+
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-white shadow-md z-50 py-4">
-        <div class="container mx-auto px-6 flex items-center justify-between">
-            <div class="text-2xl font-bold text-gray-800">
-                Rajesh<span class="text-blue-600">Pandhare</span>
-                <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-            </div>
-            <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="rajeshpandhare" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/rajeshpandhare?trk=profile-badge">Rajesh Pandhare</a></div>
-            <div class="hidden md:flex space-x-10">
-                <a href="#home" class="nav-link text-gray-700 hover:text-blue-600 transition">Home</a>
-                <a href="#about" class="nav-link text-gray-700 hover:text-blue-600 transition">About</a>
-                <a href="#experience" class="nav-link text-gray-700 hover:text-blue-600 transition">Experience</a>
-                <a href="#skills" class="nav-link text-gray-700 hover:text-blue-600 transition">Skills</a>
-                <a href="#projects" class="nav-link text-gray-700 hover:text-blue-600 transition">Projects</a>
-                <a href="#publications" class="nav-link text-gray-700 hover:text-blue-600 transition">Publications</a>
-                <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600 transition">Contact</a>
-            </div>
-            <div class="md:hidden flex items-center">
-                <button class="outline-none mobile-menu-button">
-                    <svg class="w-6 h-6 text-gray-700 hover:text-blue-600" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                        <path d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">RP</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
     </nav>
 
-    <!-- Mobile menu -->
-    <div class="hidden mobile-menu fixed top-16 left-0 w-full bg-white z-50 shadow-md">
-        <ul class="py-2 px-6">
-            <li><a href="#home" class="block py-2 text-gray-700 hover:text-blue-600">Home</a></li>
-            <li><a href="#about" class="block py-2 text-gray-700 hover:text-blue-600">About</a></li>
-            <li><a href="#experience" class="block py-2 text-gray-700 hover:text-blue-600">Experience</a></li>
-            <li><a href="#skills" class="block py-2 text-gray-700 hover:text-blue-600">Skills</a></li>
-            <li><a href="#projects" class="block py-2 text-gray-700 hover:text-blue-600">Projects</a></li>
-            <li><a href="#publications" class="block py-2 text-gray-700 hover:text-blue-600">Publications</a></li>
-            <li><a href="#contact" class="block py-2 text-gray-700 hover:text-blue-600">Contact</a></li>
-        </ul>
-    </div>
-
-    <!-- Home Section -->
-    <section id="home" class="pt-32 pb-20 bg-tech-pattern relative">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4">
-                        Hi, I'm <span class="ai-gradient-text">Rajesh Pandhare</span>
-                    </h1>
-                    <h2 class="text-2xl md:text-3xl text-gray-600 mb-6">
-                        Tech Lead specialized in <span class="text-blue-600 font-medium">GenAI, AI Agents & RAG</span>
-                    </h2>
-                    <p class="text-gray-600 mb-8 text-lg">
-                        Creating intelligent systems and AI-enhanced applications that deliver substantial business value.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                            Get in Touch
-                        </a>
-                        <a href="#projects" class="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg transition">
-                            View My Work
-                        </a>
-                    </div>
-                </div>
-                <div class="bg-white rounded-xl shadow-xl p-6 border border-blue-100">
-                    <div class="flex items-center space-x-4 mb-6">
-                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
-                            <i class="fas fa-brain text-blue-600 text-2xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold">AI/ML Expertise</h3>
-                            <p class="text-gray-600">GenAI, AI Agents, RAG, VectorDB</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center space-x-4 mb-6">
-                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
-                            <i class="fas fa-database text-blue-600 text-2xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold">Database Specialist</h3>
-                            <p class="text-gray-600">DB2, MySQL, PostgreSQL, MSSQL</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
-                            <i class="fas fa-code text-blue-600 text-2xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold">Full-Stack Developer</h3>
-                            <p class="text-gray-600">Python, C++, Streamlit, React, SQL</p>
-                        </div>
-                    </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <p class="hero-greeting">Hi, my name is</p>
+                <h1>Rajesh Pandhare</h1>
+                <h2>AI/ML Tech Lead & Software Architect</h2>
+                <p class="hero-description">
+                    An experienced software engineering professional with a passion for building production-grade AI solutions. 
+                    Specializing in generative AI, multi-agent systems, and RAG pipelines, with a strong background in 
+                    full-stack development and cloud architecture.
+                </p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#experience" class="btn btn-secondary">View My Work</a>
                 </div>
             </div>
         </div>
-        <div class="wave-animation"></div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 section-heading">About Me</h2>
-            <div class="grid md:grid-cols-3 gap-10">
-                <div class="md:col-span-2">
-                    <p class="text-gray-700 mb-6 leading-relaxed">
-                        Senior AI/ML technology leader with over 18 years of software engineering experience specializing in generative AI, retrieval-augmented generation (RAG) and multi-agent orchestration. Proven ability to define and execute AI strategy, build high-performing teams and deliver production-grade AI solutions across industries.
+    <section id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-number">01.</span>
+                <h2 class="section-title">About Me</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text reveal">
+                    <p>
+                        I'm a passionate technologist with over <strong>19 years of experience</strong> in software engineering, 
+                        currently leading AI/ML initiatives at Kanaka Software. My journey has taken me from developing device 
+                        drivers and database systems to architecting cutting-edge AI solutions.
                     </p>
-                    <p class="text-gray-700 mb-6 leading-relaxed">
-                        Adept at converting unstructured data into actionable business insights using RAG pipelines and LLM agents. Hands-on experience deploying solutions on Google Cloud Platform (GCP), Amazon Web Services (AWS) and Microsoft Azure. Successfully delivered multiple AI/ML proof-of-concepts (POCs) that demonstrated how AI can save time and drive growth for clients.
+                    <p>
+                        At Kanaka Software, I lead the technical development of <strong>multi-agent orchestration systems</strong> 
+                        for TalentPulse360, an AI-driven HR intelligence platform. I've built production-grade systems using 
+                        <strong>Python, LangChain, AutoGen</strong>, and <strong>Google's Agent Development Kit</strong>, backed by 
+                        Gemini Pro and Flash for collaborative AI agents.
                     </p>
-                    <p class="text-gray-700 mb-6 leading-relaxed">
-                        Passionate about aligning AI roadmaps with business objectives and driving innovation within multinational enterprise environments. My expertise spans from database optimization to cutting-edge AI implementations, allowing me to bridge the gap between traditional engineering and advanced AI technologies.
+                    <p>
+                        I have a proven track record of mentoring engineering teams, translating complex AI concepts into business 
+                        value, and delivering solutions for global enterprises including <strong>Saudi Aramco, Westpac, Bank of America Merrill Lynch</strong>, 
+                        and <strong>DBS Singapore</strong>.
                     </p>
-                    <div class="flex space-x-4 mt-8">
-                        <a href="https://www.linkedin.com/in/rajeshpandhare/" target="_blank" class="text-blue-600 hover:text-blue-800 transition">
-                            <i class="fab fa-linkedin text-2xl"></i>
-                        </a>
-                        <a href="https://github.com/rajeshkanaka" target="_blank" class="text-blue-600 hover:text-blue-800 transition">
-                            <i class="fab fa-github text-2xl"></i>
-                        </a>
-                        <a href="https://x.com/raje1711" target="_blank" class="text-blue-600 hover:text-blue-800 transition">
-                            <i class="fab fa-twitter text-2xl"></i>
-                        </a>
-                    </div>
+                    <p>
+                        My expertise spans the full technology stack—from low-level database optimization to high-level AI 
+                        architecture—enabling me to build robust, scalable, and innovative solutions.
+                    </p>
                 </div>
-                <div>
-                    <div class="bg-gray-50 p-6 rounded-lg shadow mb-6">
-                        <h3 class="text-xl font-semibold mb-4 text-blue-600">Education</h3>
-                        <div class="mb-4">
-                            <p class="font-medium">M.S. in Software Systems (Data Analytics)</p>
-                            <p class="text-gray-600">Birla Institute of Technology & Science (BITS) WILP, Pilani</p>
-                            <p class="text-gray-500 text-sm">2016 - 2018</p>
-                        </div>
-                        <div class="mb-4">
-                            <p class="font-medium">Postgraduate Diploma in Advanced Computing (C++)</p>
-                            <p class="text-gray-600">Centre for Development of Advanced Computing (CDAC)</p>
-                            <p class="text-gray-500 text-sm">2005</p>
-                        </div>
-                        <div>
-                            <p class="font-medium">BE Computers</p>
-                            <p class="text-gray-600">Pune University</p>
-                            <p class="text-gray-500 text-sm">2004</p>
-                        </div>
+                <div class="profile-card reveal">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <span>📍</span> Pune, India
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-lg shadow">
-                        <h3 class="text-xl font-semibold mb-4 text-blue-600">Certifications</h3>
-                        <div class="mb-4">
-                            <p class="font-medium">Internal Training in Google Cloud and Vector Database Optimization</p>
-                            <p class="text-gray-600">Google Cloud Platform</p>
-                        </div>
-                        <div class="mb-4">
-                            <p class="font-medium">IBM Certified Database Associate</p>
-                            <p class="text-gray-600">IBM</p>
-                            <p class="text-gray-500 text-sm">February 2012</p>
-                        </div>
-                        <div class="mb-4">
-                            <p class="font-medium">DB2 Administration</p>
-                            <p class="text-gray-600">Brainbench Certification</p>
-                            <p class="text-gray-500 text-sm">January 2014</p>
-                        </div>
-                        <div>
-                            <p class="font-medium">DB2 Programming</p>
-                            <p class="text-gray-600">Brainbench Certification</p>
-                            <p class="text-gray-500 text-sm">January 2014</p>
-                        </div>
+                    <div class="contact-item">
+                        <span>📧</span> <a href="mailto:pandharerajesh@gmail.com">pandharerajesh@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>📱</span> +91-8390820380
+                    </div>
+                    <div class="contact-item">
+                        <span>💼</span> <a href="https://linkedin.com/in/rajeshpandhare" target="_blank">LinkedIn Profile</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>💻</span> <a href="https://github.com/rajeshkanaka" target="_blank">GitHub Profile</a>
                     </div>
                 </div>
             </div>
@@ -305,118 +817,169 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 section-heading">Professional Experience</h2>
-            <div class="max-w-3xl mx-auto pl-32"> <!-- Added left padding to accommodate dates -->
-                <div class="experience-card">
-                    <div class="experience-date">2020 - Present</div>
-                    <h3 class="text-xl font-bold text-blue-600">Tech Lead (AIML)</h3>
-                    <p class="text-lg font-medium">Kanaka Software</p>
-                    <p class="text-gray-700 mt-2">
-                        Defined and drove the end-to-end AI strategy for TalentPulse360, a competitive-intelligence platform built on Gemini 2.5 Pro and Vertex AI. Led cross-functional teams to design RAG pipelines, orchestrate LLM agents and deploy vector search to deliver real-time insights on the global talent market.
-                    </p>
-                    <ul class="text-gray-700 mt-2 list-disc list-inside space-y-1">
-                        <li>Built scalable data-ingestion pipelines and APIs to ingest, clean and transform diverse data sets while ensuring data quality, security and compliance. Deployed solutions across GCP, AWS and Azure.</li>
-                        <li>Oversaw the architecture, design and deployment of AI-enabled web applications using Python, Streamlit and React. Utilized automated code-review agents (Copilot, Bug-Bot, Claude) to accelerate development while adhering to clean-architecture principles and Google Agent Development Kit (ADK) best practices.</li>
-                        <li>Delivered several AI/ML POCs that showcased how generative AI and multi-agent orchestration can automate analysis, accelerate decision-making and reduce development cycles.</li>
-                        <li>Collaborated with product managers and stakeholders to prioritize AI initiatives and align technology roadmaps with business goals. Mentored engineers on multi-agent orchestration, scalable microservice design and RAG patterns.</li>
-                        <li>Led a cross-functional team of 10 to develop and deploy AI-driven solutions, resulting in a 50% improvement in operational efficiency and a significant reduction in costs for clients.</li>
-                    </ul>
-                    <div class="mt-3 flex flex-wrap">
-                        <span class="tech-badge">GenAI</span>
-                        <span class="tech-badge">AI Agents</span>
-                        <span class="tech-badge">RAG</span>
-                        <span class="tech-badge">VectorDB</span>
-                        <span class="tech-badge">Python</span>
-                        <span class="tech-badge">Streamlit</span>
-                        <span class="tech-badge">React</span>
-                        <span class="tech-badge">GCP</span>
-                        <span class="tech-badge">AWS</span>
-                        <span class="tech-badge">Azure</span>
-                        <span class="tech-badge">Vertex AI</span>
-                        <span class="tech-badge">Gemini 2.5 Pro</span>
+    <section id="experience">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-number">02.</span>
+                <h2 class="section-title">Professional Experience</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="experience-list">
+                <!-- Kanaka Software -->
+                <div class="experience-item reveal">
+                    <div class="experience-header">
+                        <div class="experience-title">
+                            <h3>Kanaka Software</h3>
+                            <p class="experience-role">Tech Lead – AI/ML (GenAI, AI Agents, RAG)</p>
+                        </div>
+                        <div class="experience-period">
+                            Oct 2020 – Present<br>
+                            Pune, India
+                        </div>
+                    </div>
+                    <div class="experience-highlights">
+                        <div class="highlight-item">
+                            <p>Led the full technical development of a multi-agent orchestration system for TalentPulse360, an AI-driven HR intelligence platform focused on executive recruitment. Built using Python, Google's Agent Development Kit (ADK) backed by Gemini (Pro and Flash) to enable collaborative AI agents.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <p>Designed system that analyzes professional networks, identifies competitors, and automatically generates comprehensive reports for executive search firms.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <p>Owned web scraping architecture, inter-agent communication, LLM-based information processing, token optimization, activity tracking, and database design utilizing PostgreSQL—delivering end-to-end orchestration from user input to final output.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <p>Development workflow included Cursor and VS Code with Copilot, code reviews via CodeRabbit and Claude Code GIT Hooks, deployment through Google Vertex AI.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <p>Mentored a team of 10-15 engineers on multi-agent architectures, RAG patterns, microservices, and DevOps practices, building strong internal AI capability.</p>
+                        </div>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Generative AI</span>
+                        <span class="tech-tag">RAG</span>
+                        <span class="tech-tag">LangChain</span>
+                        <span class="tech-tag">AutoGen</span>
+                        <span class="tech-tag">Google ADK</span>
+                        <span class="tech-tag">Gemini</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Vertex AI</span>
                     </div>
                 </div>
-                
-                <div class="experience-card">
-                    <div class="experience-date">2017 - 2020</div>
-                    <h3 class="text-xl font-bold text-blue-600">Lead Application Engineer</h3>
-                    <p class="text-lg font-medium">Honeywell Process Solutions</p>
-                    <p class="text-gray-700 mt-2">
-                        Led terminal-automation projects for Honeywell's Advance Solutions group, delivering control systems and software for petroleum terminals. Ensured seamless integration with enterprise systems, improving operational efficiency and safety.
-                    </p>
-                    <ul class="text-gray-700 mt-2 list-disc list-inside space-y-1">
-                        <li>Developed technical proposals and conducted client demos; managed requirement analysis, design and implementation using C#, MS SQL, IBM DB2 and Oracle, reducing system downtime and increasing reliability.</li>
-                        <li>Coordinated cross-site teams to deploy automation systems and maintain long-term service contracts while adhering to safety and regulatory standards. Implemented performance tuning and data-integrity measures that improved throughput and reduced maintenance costs.</li>
-                    </ul>
-                    <div class="mt-3 flex flex-wrap">
-                        <span class="tech-badge">C#</span>
-                        <span class="tech-badge">MS SQL</span>
-                        <span class="tech-badge">IBM DB2</span>
-                        <span class="tech-badge">Oracle</span>
-                        <span class="tech-badge">Terminal Automation</span>
-                        <span class="tech-badge">Project Management</span>
+
+                <!-- Honeywell Process Solutions -->
+                <div class="experience-item reveal">
+                    <div class="experience-header">
+                        <div class="experience-title">
+                            <h3>Honeywell Process Solutions</h3>
+                            <p class="experience-role">Lead Application Engineer</p>
+                        </div>
+                        <div class="experience-period">
+                            Oct 2017 – Oct 2020<br>
+                            Pune, India
+                        </div>
+                    </div>
+                    <div class="experience-highlights">
+                        <div class="highlight-item">
+                            <p>Led onsite end-to-end delivery of terminal automation and advanced solutions for global customers including Saudi Aramco, Pertamina (Jakarta), and KOTC.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <p>Worked closely with customer stakeholders to gather requirements, prepare proposals, conduct demos, and drive implementations.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <p>Coordinated multi-site teams for deployment, testing, and support while ensuring adherence to safety, security, and regulatory standards.</p>
+                        </div>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">C#</span>
+                        <span class="tech-tag">MS SQL</span>
+                        <span class="tech-tag">IBM DB2</span>
+                        <span class="tech-tag">Oracle</span>
                     </div>
                 </div>
-                
-                <div class="experience-card">
-                    <div class="experience-date">2014 - 2017</div>
-                    <h3 class="text-xl font-bold text-blue-600">Senior Database Administrator / Sr. DBA (Performance)</h3>
-                    <p class="text-lg font-medium">Tieto ÉVRY</p>
-                    <p class="text-gray-700 mt-2">
-                        Diagnosed and resolved complex performance issues by conducting root-cause analyses and delivering remediation plans, reducing incident resolution time by 30%.
-                    </p>
-                    <ul class="text-gray-700 mt-2 list-disc list-inside space-y-1">
-                        <li>Led L2/L3 support teams for mission-critical database services, implementing automation scripts and knowledge-sharing practices that improved efficiency and reduced manual intervention.</li>
-                        <li>Hosted customer workshops on database health and future-proofing, earning accolades for proactive risk management and collaborative communication.</li>
-                    </ul>
-                    <div class="mt-3 flex flex-wrap">
-                        <span class="tech-badge">DB2 LUW</span>
-                        <span class="tech-badge">Zos Mainframe</span>
-                        <span class="tech-badge">Oracle</span>
-                        <span class="tech-badge">MySQL</span>
-                        <span class="tech-badge">Performance Tuning</span>
+
+                <!-- TietoEVRY -->
+                <div class="experience-item reveal">
+                    <div class="experience-header">
+                        <div class="experience-title">
+                            <h3>TietoEVRY</h3>
+                            <p class="experience-role">Senior Database Administrator – Performance</p>
+                        </div>
+                        <div class="experience-period">
+                            Mar 2014 – Sep 2017<br>
+                            Pune, India
+                        </div>
+                    </div>
+                    <div class="experience-highlights">
+                        <div class="highlight-item">
+                            <p>Supported mission-critical banking systems for global clients such as Westpac and Bank of America Merrill Lynch (BAML).</p>
+                        </div>
+                        <div class="highlight-item">
+                            <p>Performed deep performance analysis and tuning of large IBM DB2 and Oracle environments, reducing incident resolution times and improving system stability.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <p>Led L2/L3 database support teams, introduced automation, and created runbooks that reduced manual effort and improved mean time to resolution.</p>
+                        </div>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">IBM DB2</span>
+                        <span class="tech-tag">Oracle</span>
+                        <span class="tech-tag">Performance Tuning</span>
                     </div>
                 </div>
-                
-                <div class="experience-card">
-                    <div class="experience-date">2008 - 2014</div>
-                    <h3 class="text-xl font-bold text-blue-600">Developer & Database Administrator (IBM DB2)</h3>
-                    <p class="text-lg font-medium">ACI Worldwide</p>
-                    <p class="text-gray-700 mt-2">
-                        Administered enterprise databases (IBM DB2, MySQL, PostgreSQL) with a focus on performance tuning, capacity planning and disaster-recovery testing to ensure data integrity and high availability.
-                    </p>
-                    <ul class="text-gray-700 mt-2 list-disc list-inside space-y-1">
-                        <li>Developed optimization tools and provided guidance on efficient SQL, stored procedures and complex queries, supporting financial transactions and improving system performance.</li>
-                        <li>Managed data migrations, replication and indexing strategies, enhancing data quality and security and reducing data retrieval times.</li>
-                    </ul>
-                    <div class="mt-3 flex flex-wrap">
-                        <span class="tech-badge">IBM DB2</span>
-                        <span class="tech-badge">MySQL</span>
-                        <span class="tech-badge">PostgreSQL</span>
-                        <span class="tech-badge">Performance Architecture</span>
-                        <span class="tech-badge">SQL Optimization</span>
+
+                <!-- ACI Worldwide -->
+                <div class="experience-item reveal">
+                    <div class="experience-header">
+                        <div class="experience-title">
+                            <h3>ACI Worldwide</h3>
+                            <p class="experience-role">Developer & Database Administrator</p>
+                        </div>
+                        <div class="experience-period">
+                            Apr 2008 – Mar 2014<br>
+                            Pune, India
+                        </div>
+                    </div>
+                    <div class="experience-highlights">
+                        <div class="highlight-item">
+                            <p>Administered enterprise databases for high-volume payments and transaction-processing systems for clients including Siam Commercial Bank, KBank Thailand, and DBS Singapore.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <p>Designed and optimized SQL, stored procedures, and indexing strategies to handle large transaction volumes with low latency.</p>
+                        </div>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">IBM DB2</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">SQL</span>
                     </div>
                 </div>
-                
-                <div class="experience-card">
-                    <div class="experience-date">2005 - 2008</div>
-                    <h3 class="text-xl font-bold text-blue-600">C++/MSSQL Developer</h3>
-                    <p class="text-lg font-medium">Honeywell</p>
-                    <p class="text-gray-700 mt-2">
-                        Developed device drivers for card readers, flow controllers and radar gauges, contributing to embedded firmware and test harnesses that improved system integration and performance.
-                    </p>
-                    <ul class="text-gray-700 mt-2 list-disc list-inside space-y-1">
-                        <li>Designed and optimized database interfaces using MSSQL and PL/SQL, improving data-acquisition software performance and reducing system latency.</li>
-                        <li>Implemented performance tuning and database administration best practices, reducing system downtime and increasing data-retrieval efficiency.</li>
-                    </ul>
-                    <div class="mt-3 flex flex-wrap">
-                        <span class="tech-badge">C++</span>
-                        <span class="tech-badge">MSSQL</span>
-                        <span class="tech-badge">PL/SQL</span>
-                        <span class="tech-badge">Embedded Systems</span>
-                        <span class="tech-badge">Device Drivers</span>
+
+                <!-- Honeywell (Early Career) -->
+                <div class="experience-item reveal">
+                    <div class="experience-header">
+                        <div class="experience-title">
+                            <h3>Honeywell</h3>
+                            <p class="experience-role">C++ / MS SQL Developer</p>
+                        </div>
+                        <div class="experience-period">
+                            Sep 2005 – Apr 2008<br>
+                            Pune, India
+                        </div>
+                    </div>
+                    <div class="experience-highlights">
+                        <div class="highlight-item">
+                            <p>Developed device drivers and communication interfaces for card readers, flow controllers, and radar gauges.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <p>Implemented and optimized database interfaces using MS SQL and PL/SQL to improve data-acquisition performance.</p>
+                        </div>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">MS SQL</span>
+                        <span class="tech-tag">PL/SQL</span>
                     </div>
                 </div>
             </div>
@@ -424,292 +987,79 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 section-heading">Technical Skills</h2>
-            <div class="grid md:grid-cols-2 gap-10">
-                <div>
-                    <h3 class="text-xl font-bold mb-6 text-blue-600">AI & Machine Learning</h3>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">Generative AI</span>
-                            <span>95%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 95%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">AI Agents Development</span>
-                            <span>90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 90%"></div>
+    <section id="skills">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-number">03.</span>
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="skills-section reveal">
+                <div class="skills-categories">
+                    <div class="skill-group">
+                        <h4>Programming Languages</h4>
+                        <div class="skill-items">
+                            <span class="skill-item">Python</span>
+                            <span class="skill-item">C++</span>
+                            <span class="skill-item">Golang</span>
+                            <span class="skill-item">SQL</span>
+                            <span class="skill-item">PL/SQL</span>
                         </div>
                     </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">RAG (Retrieval Augmented Generation)</span>
-                            <span>92%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 92%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">Vector Databases</span>
-                            <span>88%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 88%"></div>
+                    <div class="skill-group">
+                        <h4>AI/ML Technologies</h4>
+                        <div class="skill-items">
+                            <span class="skill-item">Generative AI</span>
+                            <span class="skill-item">RAG</span>
+                            <span class="skill-item">LLM Agents</span>
+                            <span class="skill-item">LangChain</span>
+                            <span class="skill-item">AutoGen</span>
+                            <span class="skill-item">Google ADK</span>
                         </div>
                     </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">Machine Learning</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">Data Mining & Analytics</span>
-                            <span>87%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 87%"></div>
+                    <div class="skill-group">
+                        <h4>Frameworks & APIs</h4>
+                        <div class="skill-items">
+                            <span class="skill-item">FastAPI</span>
+                            <span class="skill-item">Streamlit</span>
+                            <span class="skill-item">React</span>
+                            <span class="skill-item">REST APIs</span>
                         </div>
                     </div>
-                    
-                    <h3 class="text-xl font-bold mb-6 mt-10 text-blue-600">Cloud Platforms</h3>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">Google Cloud Platform (GCP)</span>
-                            <span>90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 90%"></div>
+                    <div class="skill-group">
+                        <h4>Cloud Platforms</h4>
+                        <div class="skill-items">
+                            <span class="skill-item">GCP</span>
+                            <span class="skill-item">Vertex AI</span>
+                            <span class="skill-item">AWS</span>
+                            <span class="skill-item">Azure</span>
                         </div>
                     </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">Amazon Web Services (AWS)</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">Microsoft Azure</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
+                    <div class="skill-group">
+                        <h4>Databases</h4>
+                        <div class="skill-items">
+                            <span class="skill-item">PostgreSQL</span>
+                            <span class="skill-item">MySQL</span>
+                            <span class="skill-item">MS SQL Server</span>
+                            <span class="skill-item">IBM DB2</span>
+                            <span class="skill-item">Oracle</span>
+                            <span class="skill-item">Vector DB</span>
+                            <span class="skill-item">pgvector</span>
+                            <span class="skill-item">FAISS</span>
+                            <span class="skill-item">Weaviate</span>
                         </div>
                     </div>
-                    
-                    <h3 class="text-xl font-bold mb-6 mt-10 text-blue-600">Database Technologies</h3>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">IBM DB2</span>
-                            <span>98%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 98%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">MySQL</span>
-                            <span>95%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 95%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">PostgreSQL</span>
-                            <span>90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">MS SQL</span>
-                            <span>92%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 92%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">Oracle</span>
-                            <span>88%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 88%"></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div>
-                    <h3 class="text-xl font-bold mb-6 text-blue-600">Programming Languages</h3>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">Python</span>
-                            <span>90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">NodeJS</span>
-                            <span>88%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 88%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">Golang</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">C#</span>
-                            <span>82%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 82%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">C++</span>
-                            <span>80%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 80%"></div>
-                        </div>
-                    </div>
-                    
-                    <h3 class="text-xl font-bold mb-6 mt-10 text-blue-600">Web Development</h3>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">Streamlit</span>
-                            <span>92%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 92%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">React</span>
-                            <span>88%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 88%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">Vue.js</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">RESTful APIs</span>
-                            <span>92%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 92%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">Full-Stack Development</span>
-                            <span>87%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 87%"></div>
-                        </div>
-                    </div>
-                    
-                    <h3 class="text-xl font-bold mb-6 mt-10 text-blue-600">Other Skills</h3>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">Performance Optimization</span>
-                            <span>95%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 95%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">Technical Leadership</span>
-                            <span>90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <div class="flex justify-between mb-1">
-                            <span class="font-medium">Problem Solving</span>
-                            <span>93%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 93%"></div>
+                    <div class="skill-group">
+                        <h4>Development Tools</h4>
+                        <div class="skill-items">
+                            <span class="skill-item">Git</span>
+                            <span class="skill-item">Docker</span>
+                            <span class="skill-item">Cursor</span>
+                            <span class="skill-item">Claude Code</span>
+                            <span class="skill-item">Aider</span>
+                            <span class="skill-item">Greptile</span>
+                            <span class="skill-item">CodeRabbit</span>
+                            <span class="skill-item">GitHub Copilot</span>
                         </div>
                     </div>
                 </div>
@@ -717,369 +1067,85 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 section-heading">Featured Projects</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-lg shadow-md overflow-hidden project-card">
-                    <div class="bg-blue-600 h-3"></div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">AI-Powered Server Performance Monitor</h3>
-                        <p class="text-gray-600 mb-4">
-                            A next-level Python tool that provides real-time insights into Debian server performance during load or stress tests, going beyond typical industry standards.
-                        </p>
-                        <div class="flex flex-wrap mb-4">
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">Machine Learning</span>
-                            <span class="tech-badge">DevOps</span>
-                            <span class="tech-badge">Performance Analytics</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <a href="https://github.com/rajeshkanaka" target="_blank" class="text-blue-600 hover:text-blue-800 transition flex items-center">
-                                <span>View on GitHub</span>
-                                <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-md overflow-hidden project-card">
-                    <div class="bg-blue-600 h-3"></div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">MacOS Finder Integration for Cursor IDE</h3>
-                        <p class="text-gray-600 mb-4">
-                            A custom integration that enhances productivity by enabling seamless opening of files and projects in Cursor IDE directly from macOS Finder.
-                        </p>
-                        <div class="flex flex-wrap mb-4">
-                            <span class="tech-badge">macOS</span>
-                            <span class="tech-badge">Shell</span>
-                            <span class="tech-badge">Developer Tools</span>
-                            <span class="tech-badge">Automation</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <a href="https://github.com/rajeshkanaka/open-with-cursor-mac" target="_blank" class="text-blue-600 hover:text-blue-800 transition flex items-center">
-                                <span>View on GitHub</span>
-                                <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-md overflow-hidden project-card">
-                    <div class="bg-blue-600 h-3"></div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">RAG-Powered Enterprise Knowledge Base</h3>
-                        <p class="text-gray-600 mb-4">
-                            An intelligent enterprise knowledge system using Retrieval Augmented Generation to provide accurate, context-aware responses from company documentation.
-                        </p>
-                        <div class="flex flex-wrap mb-4">
-                            <span class="tech-badge">RAG</span>
-                            <span class="tech-badge">Vector Database</span>
-                            <span class="tech-badge">Natural Language Processing</span>
-                            <span class="tech-badge">Python</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <a href="#" class="text-blue-600 hover:text-blue-800 transition flex items-center">
-                                <span>Project Details</span>
-                                <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-md overflow-hidden project-card">
-                    <div class="bg-blue-600 h-3"></div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">Autonomous AI Agent Framework</h3>
-                        <p class="text-gray-600 mb-4">
-                            A modular framework for building autonomous AI agents that can perform complex tasks through tool integration, planning, and continuous learning.
-                        </p>
-                        <div class="flex flex-wrap mb-4">
-                            <span class="tech-badge">AI Agents</span>
-                            <span class="tech-badge">GenAI</span>
-                            <span class="tech-badge">LLM</span>
-                            <span class="tech-badge">Node.js</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <a href="#" class="text-blue-600 hover:text-blue-800 transition flex items-center">
-                                <span>Project Details</span>
-                                <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-md overflow-hidden project-card">
-                    <div class="bg-blue-600 h-3"></div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">High-Performance Query Optimizer</h3>
-                        <p class="text-gray-600 mb-4">
-                            An advanced SQL query optimization tool that automatically identifies and rewrites inefficient queries for dramatically improved database performance.
-                        </p>
-                        <div class="flex flex-wrap mb-4">
-                            <span class="tech-badge">SQL</span>
-                            <span class="tech-badge">Performance Optimization</span>
-                            <span class="tech-badge">DB2</span>
-                            <span class="tech-badge">Oracle</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <a href="#" class="text-blue-600 hover:text-blue-800 transition flex items-center">
-                                <span>Project Details</span>
-                                <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-md overflow-hidden project-card">
-                    <div class="bg-blue-600 h-3"></div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">Developer Command Cheatsheets</h3>
-                        <p class="text-gray-600 mb-4">
-                            Contributed to collaborative cheatsheets for console commands, making complex command-line operations accessible to developers of all levels.
-                        </p>
-                        <div class="flex flex-wrap mb-4">
-                            <span class="tech-badge">Markdown</span>
-                            <span class="tech-badge">Documentation</span>
-                            <span class="tech-badge">Developer Tools</span>
-                            <span class="tech-badge">Open Source</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <a href="https://github.com/tldr-pages/tldr" target="_blank" class="text-blue-600 hover:text-blue-800 transition flex items-center">
-                                <span>View on GitHub</span>
-                                <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-number">04.</span>
+                <h2 class="section-title">Education</h2>
+                <div class="section-line"></div>
             </div>
-        </div>
-    </section>
-
-    <!-- Publications Section -->
-    <section id="publications" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 section-heading">Publications & Presentations</h2>
-            <div class="max-w-4xl mx-auto">
-                <div class="bg-gray-50 rounded-lg p-6 mb-6 shadow-sm publication-card">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between">
-                        <div>
-                            <h3 class="text-xl font-bold text-blue-600">OpenAI o1 Models Podcast</h3>
-                            <p class="text-gray-600 mt-1">
-                                Audio insights breaking down complex AI concepts from OpenAI's revolutionary o1 models.
-                            </p>
-                            <p class="text-gray-500 text-sm mt-2">April 2025</p>
-                        </div>
-                        <a href="https://soundcloud.com/rajesh-pandhare/openai-o1-models" target="_blank" class="mt-4 md:mt-0 bg-blue-100 text-blue-600 px-4 py-2 rounded-md hover:bg-blue-200 transition flex items-center">
-                            <i class="fas fa-headphones mr-2"></i>
-                            <span>Listen</span>
-                        </a>
-                    </div>
+            <div class="education-list">
+                <div class="education-item reveal">
+                    <h3 class="education-degree">M.Tech – Software Systems</h3>
+                    <p class="education-school">Birla Institute of Technology & Science (BITS) – WILP</p>
+                    <p class="education-year">2016 – 2018</p>
                 </div>
-                
-                <div class="bg-gray-50 rounded-lg p-6 mb-6 shadow-sm publication-card">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between">
-                        <div>
-                            <h3 class="text-xl font-bold text-blue-600">IDUG EMEA Dublin 2015: DB2 Community Leader Award</h3>
-                            <p class="text-gray-600 mt-1">
-                                Received the DB2 Community Leader Award from IBM and IDUG at the EMEA conference in Dublin.
-                            </p>
-                            <p class="text-gray-500 text-sm mt-2">January 25, 2015</p>
-                        </div>
-                        <a href="https://www.linkedin.com/pulse/idug-emea-dublin-2015-got-db2-community-leader-award-from-pandhare" target="_blank" class="mt-4 md:mt-0 bg-blue-100 text-blue-600 px-4 py-2 rounded-md hover:bg-blue-200 transition flex items-center">
-                            <i class="fas fa-external-link-alt mr-2"></i>
-                            <span>Read Article</span>
-                        </a>
-                    </div>
+                <div class="education-item reveal">
+                    <h3 class="education-degree">Postgrad Diploma in Advanced Computing</h3>
+                    <p class="education-school">Centre for Development of Advanced Computing (CDAC)</p>
+                    <p class="education-year">2005</p>
                 </div>
-                
-                <div class="bg-gray-50 rounded-lg p-6 mb-6 shadow-sm publication-card">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between">
-                        <div>
-                            <h3 class="text-xl font-bold text-blue-600">Presentation at IDUG Chennai</h3>
-                            <p class="text-gray-600 mt-1">
-                                Featured speaker at the International DB2 Users Group (IDUG) conference in Chennai.
-                            </p>
-                            <p class="text-gray-500 text-sm mt-2">March 28, 2017</p>
-                        </div>
-                        <a href="https://www.linkedin.com/pulse/presented-idug-chennai-28th-march-2017-rajesh-pandhare" target="_blank" class="mt-4 md:mt-0 bg-blue-100 text-blue-600 px-4 py-2 rounded-md hover:bg-blue-200 transition flex items-center">
-                            <i class="fas fa-external-link-alt mr-2"></i>
-                            <span>Read Article</span>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="bg-gray-50 rounded-lg p-6 mb-6 shadow-sm publication-card">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between">
-                        <div>
-                            <h3 class="text-xl font-bold text-blue-600">YouDunnit Award for Customer/Stakeholder Delight</h3>
-                            <p class="text-gray-600 mt-1">
-                                Received recognition for exceptional work in performance optimization and customer support at Tieto.
-                            </p>
-                            <p class="text-gray-500 text-sm mt-2">July 1, 2017</p>
-                        </div>
-                        <a href="https://www.linkedin.com/pulse/received-youdunnit-award-category-customerstakeholder-rajesh-pandhare" target="_blank" class="mt-4 md:mt-0 bg-blue-100 text-blue-600 px-4 py-2 rounded-md hover:bg-blue-200 transition flex items-center">
-                            <i class="fas fa-external-link-alt mr-2"></i>
-                            <span>Read Article</span>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="bg-gray-50 rounded-lg p-6 mb-6 shadow-sm publication-card">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between">
-                        <div>
-                            <h3 class="text-xl font-bold text-blue-600">DB2's GOT TALENT 2015 First Place Winner</h3>
-                            <p class="text-gray-600 mt-1">
-                                Won first place in the international DB2's GOT TALENT 2015 contest sponsored by DBI Software, IDUG, KBCE, and Triton Consulting.
-                            </p>
-                            <p class="text-gray-500 text-sm mt-2">2015</p>
-                        </div>
-                        <a href="#" class="mt-4 md:mt-0 bg-blue-100 text-blue-600 px-4 py-2 rounded-md hover:bg-blue-200 transition flex items-center">
-                            <i class="fas fa-trophy mr-2"></i>
-                            <span>Achievement</span>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="text-center mt-10">
-                    <p class="text-gray-700 mb-6">
-                        Rajesh is an active contributor to the AI and database communities, sharing insights on the latest technologies and best practices.
-                    </p>
-                    <div class="flex justify-center space-x-4">
-                        <a href="https://www.linkedin.com/today/author/rajeshpandhare" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition flex items-center">
-                            <i class="fab fa-linkedin mr-2"></i>
-                            <span>LinkedIn Articles</span>
-                        </a>
-                        <a href="https://x.com/raje1711" target="_blank" class="bg-gray-800 hover:bg-black text-white px-6 py-3 rounded-lg transition flex items-center">
-                            <i class="fab fa-twitter mr-2"></i>
-                            <span>Twitter Updates</span>
-                        </a>
-                    </div>
+                <div class="education-item reveal">
+                    <h3 class="education-degree">Bachelor of Engineering</h3>
+                    <p class="education-school">Computer Engineering – Pune University</p>
+                    <p class="education-year">2000 – 2004</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-800 text-white relative">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 section-heading text-white">Get In Touch</h2>
-            <div class="grid md:grid-cols-2 gap-10">
-                <div>
-                    <p class="text-gray-300 mb-8 leading-relaxed">
-                        I'm always interested in discussing new projects, innovative ideas, or opportunities to be part of your team. Whether you have a question or just want to say hi, feel free to reach out!
-                    </p>
-                    
-                    <div class="flex items-start mb-6">
-                        <div class="mr-4 text-blue-400">
-                            <i class="fas fa-map-marker-alt text-2xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-white">Location</h3>
-                            <p class="text-gray-300">Pune, Maharashtra, India</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start mb-6">
-                        <div class="mr-4 text-blue-400">
-                            <i class="fas fa-envelope text-2xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-white">Email</h3>
-                            <p class="text-gray-300">pandharerajesh@gmail.com</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start mb-10">
-                        <div class="mr-4 text-blue-400">
-                            <i class="fas fa-briefcase text-2xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-white">Employment</h3>
-                            <p class="text-gray-300">Tech Lead at Kanaka Software</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex space-x-4">
-                        <a href="https://www.linkedin.com/in/rajeshpandhare/" target="_blank" class="bg-gray-700 hover:bg-gray-600 w-12 h-12 rounded-full flex items-center justify-center transition">
-                            <i class="fab fa-linkedin-in text-xl"></i>
-                        </a>
-                        <a href="https://github.com/rajeshkanaka" target="_blank" class="bg-gray-700 hover:bg-gray-600 w-12 h-12 rounded-full flex items-center justify-center transition">
-                            <i class="fab fa-github text-xl"></i>
-                        </a>
-                        <a href="https://x.com/raje1711" target="_blank" class="bg-gray-700 hover:bg-gray-600 w-12 h-12 rounded-full flex items-center justify-center transition">
-                            <i class="fab fa-twitter text-xl"></i>
-                        </a>
-                        <a href="https://soundcloud.com/rajesh-pandhare" target="_blank" class="bg-gray-700 hover:bg-gray-600 w-12 h-12 rounded-full flex items-center justify-center transition">
-                            <i class="fab fa-soundcloud text-xl"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="bg-gray-700 rounded-lg p-8">
-                    <h3 class="text-2xl font-bold mb-6">Send Me a Message</h3>
-                    <form>
-                        <div class="mb-4">
-                            <label for="name" class="block text-gray-300 mb-2">Name</label>
-                            <input type="text" id="name" class="w-full px-4 py-2 rounded-md bg-gray-800 border border-gray-600 text-white focus:outline-none focus:border-blue-500">
-                        </div>
-                        
-                        <div class="mb-4">
-                            <label for="email" class="block text-gray-300 mb-2">Email</label>
-                            <input type="email" id="email" class="w-full px-4 py-2 rounded-md bg-gray-800 border border-gray-600 text-white focus:outline-none focus:border-blue-500">
-                        </div>
-                        
-                        <div class="mb-4">
-                            <label for="subject" class="block text-gray-300 mb-2">Subject</label>
-                            <input type="text" id="subject" class="w-full px-4 py-2 rounded-md bg-gray-800 border border-gray-600 text-white focus:outline-none focus:border-blue-500">
-                        </div>
-                        
-                        <div class="mb-6">
-                            <label for="message" class="block text-gray-300 mb-2">Message</label>
-                            <textarea id="message" rows="5" class="w-full px-4 py-2 rounded-md bg-gray-800 border border-gray-600 text-white focus:outline-none focus:border-blue-500"></textarea>
-                        </div>
-                        
-                        <button type="button" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition w-full">Send Message</button>
-                    </form>
-                </div>
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-content reveal">
+                <p class="hero-greeting">05. What's Next?</p>
+                <h2>Get In Touch</h2>
+                <p>
+                    I'm always interested in hearing about new opportunities, collaborations, or just having a chat 
+                    about AI, software architecture, or technology in general. Feel free to reach out!
+                </p>
+                <a href="mailto:pandharerajesh@gmail.com" class="btn btn-primary">Say Hello</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-8 bg-gray-900 text-gray-400 text-sm">
-        <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2025 Rajesh Pandhare. All rights reserved.</p>
-            <p class="mt-2">Tech Lead specializing in GenAI, AI Agents, and RAG implementations</p>
+    <footer>
+        <div class="container">
+            <p>Designed & Built by Rajesh Pandhare | © 2026</p>
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
-        const btn = document.querySelector("button.mobile-menu-button");
-        const menu = document.querySelector(".mobile-menu");
+        // Scroll Reveal Animation
+        const reveals = document.querySelectorAll('.reveal');
         
-        btn.addEventListener("click", () => {
-            menu.classList.toggle("hidden");
-        });
-        
-        // Close mobile menu when clicking a link
-        const mobileLinks = document.querySelectorAll(".mobile-menu a");
-        mobileLinks.forEach(link => {
-            link.addEventListener("click", () => {
-                menu.classList.add("hidden");
+        const revealOnScroll = () => {
+            reveals.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 100;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('active');
+                }
             });
-        });
-        
-        // Smooth scrolling for navigation links
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Initial check
+
+        // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
     </script>
